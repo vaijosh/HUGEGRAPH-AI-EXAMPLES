@@ -79,8 +79,15 @@ first line takes it from `connection.properties.local`:
 ```bash
 export HUGEGRAPH_AI_HOME="${HUGEGRAPH_AI_HOME:-$(awk -F= '$1 ~ /^[ \t]*HUGEGRAPH_AI_HOME[ \t]*$/ {sub(/^[^=]*=[ \t]*/, ""); sub(/[ \t]*$/, ""); print; exit}' connection.properties.local 2>/dev/null)}"
 echo "$HUGEGRAPH_AI_HOME"        # must print your clone's path; if empty, set it as in step 1
-pip install -r requirements.txt
+pip install -r requirements.txt -c constraints.txt
 ```
+
+`constraints.txt` pins every dependency to a set of versions known to work together (checked on macOS, and for
+Linux x86_64 wheels). hugegraph-llm leaves almost all of its dependencies unpinned, so without it pip starts from
+the newest releases and, when they conflict, backtracks through hundreds of `gradio` and `litellm` versions,
+downloading each one ("This is taking longer than usual"). To try newer versions, leave out `-c constraints.txt`;
+after a working install, refresh the file with
+`pip freeze --exclude-editable | grep -viE '^(hugegraph|pip|setuptools|wheel)(==| @)' > constraints.txt`.
 
 ## 4. Install Ollama and Pull the Models
 **macOS:**
