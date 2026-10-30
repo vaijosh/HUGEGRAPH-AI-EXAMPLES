@@ -1,0 +1,437 @@
+[
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 1,
+  "section": "One hop",
+  "questions": [
+   "Who founded Nvidia?"
+  ],
+  "expected": "Jensen Huang, Chris Malachowsky, Curtis Priem",
+  "answer": "Nvidia was founded by 3 people, according to the result: Curtis Priem, Jensen Huang, and Chris Malachowsky.\n\n- Curtis Priem\n- Jensen Huang\n- Chris Malachowsky",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Nvidia')).out('founded_by').hasLabel('person').values('name')",
+  "secs": 7.2
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 2,
+  "section": "One hop",
+  "questions": [
+   "Who founded Intel?"
+  ],
+  "expected": "Gordon Moore, Robert Noyce, and investor Arthur Rock",
+  "answer": "The query returned 3 people linked to Intel through the `founded_by` relationship: Arthur Rock, Gordon Moore, and Robert Noyce.\n\n- Arthur Rock\n- Gordon Moore\n- Robert Noyce\n\nNote: the query matched any company whose name contains \"Intel\", so these results could include companies other than Intel itself. The raw result doesn't show which company each person is linked to.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Intel')).out('founded_by').hasLabel('person').values('name')",
+  "secs": 5.2
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 3,
+  "section": "One hop",
+  "questions": [
+   "Who founded Qualcomm?"
+  ],
+  "expected": "Irwin Jacobs, Andrew Viterbi, Franklin Antonio, Adelia Coffman, Andrew Cohen, Klein Gilhousen, Harvey White",
+  "answer": "The query returned 7 people linked to Qualcomm through a `founded_by` relationship:\n\n- Andrew Cohen\n- Harvey White\n- Irwin Jacobs\n- Adelia Coffman\n- Andrew Viterbi\n- Klein Gilhousen\n- Franklin Antonio\n\nThe query matched companies whose name merely contains \"Qualcomm\". The result doesn't show which company each person came from, so I can't confirm they all belong to the same entity.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Qualcomm')).out('founded_by').hasLabel('person').values('name')",
+  "secs": 6.6
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 4,
+  "section": "One hop",
+  "questions": [
+   "Who founded AMD?"
+  ],
+  "expected": "Jerry Sanders with seven Fairchild Semiconductor colleagues: Ed Turney, John Carey, Sven Simonsen, Jack Gifford, Frank Botte, Jim Giles, Larry Stenger",
+  "answer": "The query ran but returned no results. Try rephrasing the question.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('AMD')).out('founded_by').hasLabel('person').values('name')",
+  "secs": 2.6
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 5,
+  "section": "One hop",
+  "questions": [
+   "Who founded TSMC?"
+  ],
+  "expected": "Morris Chang",
+  "answer": "TSMC was founded by Morris Chang, the only result (1 in total).\n\n- **Morris Chang**: a person linked to the company by the `founded_by` relationship.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('TSMC')).out('founded_by').hasLabel('person').values('name')",
+  "secs": 5.4
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 6,
+  "section": "One hop",
+  "questions": [
+   "Who is the CEO of TSMC?"
+  ],
+  "expected": "C. C. Wei",
+  "answer": "The query returned 2 results in total, so the raw result does not point to a single CEO of TSMC: it lists both C. C. Wei and Morris Chang.\n\n- **C. C. Wei**\n- **Morris Chang**\n\nThe result doesn't say which person currently holds the role, or whether one of them is a former CEO. It only shows that both are linked to TSMC through a `ceo_of` relationship. I can't say more about who is CEO now from this data alone.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('TSMC')).in('ceo_of').hasLabel('person').values('name')",
+  "secs": 5.3
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 7,
+  "section": "One hop",
+  "questions": [
+   "Who has been CEO of Qualcomm?"
+  ],
+  "expected": "Paul E. Jacobs, Steven Mollenkopf",
+  "answer": "The query returned 2 people who have been CEO of Qualcomm.\n\n- Paul E. Jacobs\n- Steven Mollenkopf\n\nThe result lists only names. It doesn't say when each person served or whether either is the current CEO.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Qualcomm')).in('ceo_of').hasLabel('person').values('name')",
+  "secs": 4.9
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 8,
+  "section": "One hop",
+  "questions": [
+   "Where is ASML headquartered?"
+  ],
+  "expected": "Veldhoven",
+  "answer": "ASML is headquartered in Veldhoven, Netherlands (1 result in total).\n\n- **Headquarters city:** Veldhoven\n- **Country:** Netherlands\n- **State:** none listed (empty in the result)",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('ASML')).out('headquartered_in').project('name', 'state', 'country').by('name').by(coalesce(values('state'), constant(''))).by(coalesce(values('country'), constant('')))",
+  "secs": 4.9
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 9,
+  "section": "One hop",
+  "questions": [
+   "Which products does ASML develop?"
+  ],
+  "expected": "PAS 2000, PAS 2400, PAS 2500, PAS 5500",
+  "answer": "ASML develops 5 products in total, according to the query result.\n\n- PAS 2000\n- PAS 2400\n- PAS 2500\n- PAS 5500\n- EUV lithography machine\n\nNote that the query matched companies whose name contains \"ASML\", so these results may include more than one such company entity.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('ASML')).out('develops').hasLabel('product').values('name')",
+  "secs": 4.7
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 10,
+  "section": "One hop",
+  "questions": [
+   "What has AMD acquired?"
+  ],
+  "expected": "Xilinx (2022)",
+  "answer": "The query ran but returned no results. Try rephrasing the question.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('AMD')).out('acquired').project('name').by('name')",
+  "secs": 2.6
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 11,
+  "section": "One hop",
+  "questions": [
+   "Which companies did Broadcom Inc. acquire?"
+  ],
+  "expected": "CyOptics (2013), LSI Corporation (2013), PLX Technology (2014), Emulex Corporation (2015), Broadcom Corporation (2016), all made as Avago Technologies, and VMware (2023)",
+  "answer": "Broadcom Inc. acquired 6 companies in total, according to the query result.\n\n- VMware\n- CyOptics\n- PLX Technology\n- LSI Corporation\n- Emulex Corporation\n- Broadcom Corporation\n\nNote: the query matched any company whose name contains \"Broadcom\", so these results may include acquisitions by more than one Broadcom-named entity (for example, Broadcom Corporation versus Broadcom Inc.). The result does not say which entity made each acquisition.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Broadcom')).out('acquired').project('name').by('name')",
+  "secs": 5.1
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 12,
+  "section": "One hop",
+  "questions": [
+   "Who invested in TSMC?"
+  ],
+  "expected": "Philips (58 million), Formosa Plastics Group, CAPCO, Taiyuan Textile, Kuomintang Central Investment Co.",
+  "answer": "Five investors in TSMC were found in the graph.\n\n- CAPCO\n- Philips\n- Taiyuan Textile\n- Formosa Plastics Group\n- Kuomintang Central Investment Co.\n\nThe query matched companies whose name contains \"TSMC\" and returned the entities with an `invested_in` edge to them. The result lists only investor names, with no amounts, dates, or stakes.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('TSMC')).in('invested_in').project('name').by('name')",
+  "secs": 5.2
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 13,
+  "section": "One hop",
+  "questions": [
+   "Who invested in Nvidia?"
+  ],
+  "expected": "Sequoia Capital, Sutter Hill Ventures",
+  "answer": "Two investors in Nvidia appear in the results: Sequoia Capital and Sutter Hill Ventures.\n\n- Sequoia Capital\n- Sutter Hill Ventures\n\nNote: the query matched companies whose name contains \"Nvidia\", so these investors are linked to any company matching that text. The result shows only the investors' names, not details such as investment dates or amounts.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Nvidia')).in('invested_in').project('name').by('name')",
+  "secs": 4.9
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 14,
+  "section": "Filters",
+  "questions": [
+   "Which companies are headquartered in Santa Clara, California?"
+  ],
+  "expected": "AMD, Intel, Nvidia",
+  "answer": "Three companies are headquartered in Santa Clara, California: Intel, Nvidia, and Advanced Micro Devices, Inc.\n\n- Intel\n- Nvidia\n- Advanced Micro Devices, Inc.\n\nNote: the query matched cities whose name contains \"Santa Clara\" and did not filter on the state. The result only lists company names, so it does not confirm the state for each match.",
+  "gremlin": "g.V().hasLabel('city').has('name', TextP.containing('Santa Clara')).in('headquartered_in').hasLabel('company').values('name')",
+  "secs": 5.3
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 15,
+  "section": "Filters",
+  "questions": [
+   "Which companies are headquartered in California?"
+  ],
+  "expected": "AMD, Intel, Nvidia, Qualcomm (San Diego), Broadcom Inc. (Palo Alto); tests partial matching on places",
+  "answer": "Five companies are headquartered in California, according to the query result:\n\n- Intel\n- Nvidia\n- Advanced Micro Devices, Inc.\n- Broadcom Inc.\n- Qualcomm",
+  "gremlin": "g.V().hasLabel('city').has('state', 'California').in('headquartered_in').hasLabel('company').dedup().values('name')",
+  "secs": 4.6
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 16,
+  "section": "Filters",
+  "questions": [
+   "Which companies are based in the Netherlands?"
+  ],
+  "expected": "ASML, ASM International",
+  "answer": "One company in the result is based in the Netherlands: ASML.\n\n- ASML\n\nThis is the only result returned (1 of 1 rows).",
+  "gremlin": "g.V().hasLabel('city').has('country', TextP.containing('Netherlands')).in('headquartered_in').hasLabel('company').dedup().values('name')",
+  "secs": 4.9
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 17,
+  "section": "Filters",
+  "questions": [
+   "Which companies were founded after 1985?"
+  ],
+  "expected": "TSMC (1987), Arm Holdings (1990), Nvidia (1993)",
+  "answer": "Three companies were founded after 1985.\n\n- **TSMC**: 1987\n- **Arm Holdings**: 1990\n- **Nvidia**: 1993",
+  "gremlin": "g.V().hasLabel('company').has('founded_year', P.gt(1985)).project('name', 'founded_year').by('name').by('founded_year')",
+  "secs": 5.0
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 18,
+  "section": "Filters",
+  "questions": [
+   "Which products are GPUs?"
+  ],
+  "expected": "GeForce (Nvidia), Intel Arc (Intel), Mali and Immortalis (Arm Holdings)",
+  "answer": "Five products are typed as GPUs in the graph: Mali, GeForce, Intel Arc, Immortalis, and \"graphics processing units\".\n\n- Mali\n- GeForce\n- Intel Arc\n- Immortalis\n- graphics processing units (this looks like a generic term rather than a specific product)",
+  "gremlin": "g.V().hasLabel('product').has('type', 'GPU').values('name')",
+  "secs": 4.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 19,
+  "section": "Filters",
+  "questions": [
+   "Which acquisitions were worth more than 5,000 million dollars?"
+  ],
+  "expected": "Broadcom Inc. -> VMware (69,000, 2023), Broadcom Inc. (as Avago Technologies) -> Broadcom Corporation (37,000, 2016), Broadcom Inc. (as Avago Technologies) -> LSI Corporation (6,600, 2013)",
+  "answer": "Three acquisitions were worth more than 5,000 million dollars, and all three were made by Broadcom Inc.\n\n- **LSI Corporation** (2013): 6,600 million USD\n- **Broadcom Corporation** (2016): 37,000 million USD\n- **VMware** (2023): 69,000 million USD",
+  "gremlin": "g.E().hasLabel('acquired').has('amount_usd_million', P.gt(5000)).project('acquirer', 'acquired', 'amount_usd_million', 'year').by(outV().values('name')).by(inV().values('name')).by('amount_usd_million').by(coalesce(values('year'), constant('')))",
+  "secs": 5.5
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 20,
+  "section": "Filters",
+  "questions": [
+   "Which acquisitions happened in 2013?"
+  ],
+  "expected": "Broadcom Inc. (as Avago Technologies) -> CyOptics (400), Broadcom Inc. (as Avago Technologies) -> LSI Corporation (6,600)",
+  "answer": "Two acquisitions happened in 2013, and both were made by Broadcom Inc.\n\n- **CyOptics**: acquired by Broadcom Inc. for $400 million.\n- **LSI Corporation**: acquired by Broadcom Inc. for $6,600 million.",
+  "gremlin": "g.V().hasLabel('company').outE('acquired').has('year', 2013).project('acquirer', 'acquired', 'year', 'amount_usd_million').by(outV().values('name')).by(inV().values('name')).by(coalesce(values('year'), constant(''))).by(coalesce(values('amount_usd_million'), constant('')))",
+  "secs": 6.6
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 21,
+  "section": "Multi-hop",
+  "questions": [
+   "Which products are developed by companies headquartered in Santa Clara, California?"
+  ],
+  "expected": "AMD: Ryzen, Athlon, Opteron and the Am2501 to Am9300 chips. Intel: Intel Core, Intel Arc, Intel 4004. Nvidia: GeForce",
+  "answer": "Companies headquartered in Santa Clara, California develop 17 products in total, though some entries look like product categories or codes rather than named products.\n\n- **Intel Arc**\n- **Intel 4004**\n- **Intel Core**\n- **GeForce**\n- **Ryzen**\n- **Athlon**\n- **Opteron**\n- **GPU**\n- **SoC**\n- **API**\n- ...and 7 more\n\nThe remaining entries are \"1101\", \"3101\", \"3301\", \"system-on-chips\", \"central processing units\", \"graphics processing units\" and \"field-programmable gate arrays\". The result does not say which company develops each product.",
+  "gremlin": "g.V().hasLabel('city').has('name', TextP.containing('Santa Clara')).has('state', TextP.containing('California')).in('headquartered_in').hasLabel('company').out('develops').hasLabel('product').dedup().values('name')",
+  "secs": 5.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 22,
+  "section": "Multi-hop",
+  "questions": [
+   "Which companies develop GPUs, and where are they headquartered?"
+  ],
+  "expected": "Nvidia and Intel (Santa Clara, California), Arm Holdings (Cambridge)",
+  "answer": "Four companies develop GPUs, according to the result (4 in total):\n\n- **Arm Holdings**: Cambridge\n- **Nvidia**: Santa Clara\n- **Intel**: Santa Clara\n- **Advanced Micro Devices, Inc.**: Santa Clara",
+  "gremlin": "g.V().hasLabel('product').has('type', TextP.containing('GPU')).in('develops').hasLabel('company').dedup().project('company', 'headquarters').by('name').by(coalesce(out('headquartered_in').values('name'), constant('')))",
+  "secs": 7.2
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 23,
+  "section": "Multi-hop",
+  "questions": [
+   "Who founded the companies that Arm Holdings competes with?"
+  ],
+  "expected": "AMD's eight founders, Nvidia's (Jensen Huang, Chris Malachowsky, Curtis Priem), Intel's (Gordon Moore, Robert Noyce, Arthur Rock) and Qualcomm's seven",
+  "answer": "The query returned 13 people who founded companies that Arm Holdings competes with. The result lists only names, so it doesn't say which person founded which company.\n\n- Arthur Rock\n- Gordon Moore\n- Robert Noyce\n- Curtis Priem\n- Jensen Huang\n- Chris Malachowsky\n- Andrew Cohen\n- Harvey White\n- Irwin Jacobs\n- Adelia Coffman\n- ...and 3 more (Andrew Viterbi, Klein Gilhousen, Franklin Antonio)\n\nThe query matched Arm Holdings by a \"contains\" name search. It also returned only founders whose label is person, so other founder types would be missing.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Arm Holdings')).out('competes_with').out('founded_by').hasLabel('person').dedup().values('name')",
+  "secs": 6.0
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 24,
+  "section": "Multi-hop",
+  "questions": [
+   "Which of the companies Arm Holdings competes with develop GPUs?"
+  ],
+  "expected": "Nvidia (GeForce), Intel (Intel Arc)",
+  "answer": "Two of the companies Arm Holdings competes with develop GPUs: Intel and Nvidia (2 in total).\n\n- **Intel**\n- **Nvidia**\n\nThe query matched competitors of Arm Holdings that develop a product whose type or name contains \"GPU.\" The raw result gives only the company names and no further details.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Arm Holdings')).both('competes_with').dedup().where(out('develops').hasLabel('product').or(has('type', TextP.containing('GPU')), has('name', TextP.containing('GPU')))).values('name')",
+  "secs": 6.9
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 25,
+  "section": "Multi-hop",
+  "questions": [
+   "Where are the companies that Intel invested in headquartered?"
+  ],
+  "expected": "Veldhoven (ASML)",
+  "answer": "The companies Intel invested in are headquartered in 1 location in total: Veldhoven, Netherlands.\n\n- **Veldhoven**: country Netherlands, no state listed.\n\nThe result shows only the headquarters location, not which invested company is based there. The query also matched any company with \"Intel\" in its name, so it may not be limited to Intel itself.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Intel')).out('invested_in').out('headquartered_in').dedup().project('name', 'state', 'country').by('name').by(coalesce(values('state'), constant(''))).by(coalesce(values('country'), constant('')))",
+  "secs": 6.5
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 26,
+  "section": "Multi-hop",
+  "questions": [
+   "Which companies compete with Intel, and where are they headquartered?"
+  ],
+  "expected": "AMD (Santa Clara, California), Arm Holdings (Cambridge)",
+  "answer": "Three companies compete with Intel in the result, though one headquarters is missing.\n\n- **AMD**: headquarters not listed (blank in the result).\n- **Arm Holdings**: Cambridge.\n- **Advanced Micro Devices, Inc.**: Santa Clara.\n\nNote that \"AMD\" and \"Advanced Micro Devices, Inc.\" may be the same company, recorded as two entries. If so, the result has only two distinct competitors, and the missing headquarters for \"AMD\" would likely be Santa Clara. The result itself doesn't confirm this.",
+  "gremlin": "g.V().hasLabel('company').has('name', TextP.containing('Intel')).both('competes_with').dedup().as('c').project('company', 'headquarters').by('name').by(coalesce(out('headquartered_in').values('name'), constant('')))",
+  "secs": 5.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 27,
+  "section": "Multi-hop",
+  "questions": [
+   "Which founders are also the CEO of the company they founded?"
+  ],
+  "expected": "Jensen Huang (Nvidia)",
+  "answer": "Two founders are also the CEO of the company they founded.\n\n- **Morris Chang** – TSMC\n- **Jensen Huang** – Nvidia",
+  "gremlin": "g.V().hasLabel('company').as('c').out('founded_by').as('p').where(out('ceo_of').as('c')).project('founder', 'company').by('name').by(select('c').values('name'))",
+  "secs": 4.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 28,
+  "section": "Aggregation",
+  "questions": [
+   "Which company has the most founders?"
+  ],
+  "expected": "AMD (8)",
+  "answer": "Qualcomm has the most founders, with 7 (1 result in total).\n\n- **Qualcomm**: 7 founders\n\nThis is the top row from the query, which sorted companies by founder count in descending order and kept only the first. It does not show other companies' counts or whether any tied with Qualcomm.",
+  "gremlin": "g.V().hasLabel('company').project('name', 'count').by('name').by(out('founded_by').count()).order().by(select('count'), desc).limit(1)",
+  "secs": 5.0
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 29,
+  "section": "Aggregation",
+  "questions": [
+   "Which company made the most acquisitions?"
+  ],
+  "expected": "Broadcom Inc. (6; five of them made as Avago Technologies)",
+  "answer": "Broadcom Inc. made the most acquisitions, with 6 in total. The query returned one result.\n\n- **Broadcom Inc.**: 6 acquisitions\n\nThe query sorted companies by their number of \"acquired\" edges and kept only the top one. The result doesn't show whether other companies tied with Broadcom, or which companies Broadcom acquired.",
+  "gremlin": "g.V().hasLabel('company').project('name', 'count').by('name').by(outE('acquired').count()).order().by(select('count'), desc).limit(1)",
+  "secs": 5.7
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 30,
+  "section": "Aggregation",
+  "questions": [
+   "Which city has the most company headquarters?"
+  ],
+  "expected": "Santa Clara, California (3)",
+  "answer": "Santa Clara is the city with the most company headquarters, with 3 (1 result in total).\n\n- **Santa Clara**: 3 company headquarters\n\nThe query returned only the top city (limit 1), so it doesn't show how other cities compare or whether any tie with Santa Clara.",
+  "gremlin": "g.V().hasLabel('city').project('name', 'count').by('name').by(__.in('headquartered_in').count()).order().by(select('count'), desc).limit(1)",
+  "secs": 5.1
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 31,
+  "section": "Aggregation",
+  "questions": [
+   "Which company has the most competitors listed?"
+  ],
+  "expected": "Arm Holdings (7)",
+  "answer": "Arm Holdings has the most competitors listed, with 7 (1 result in total).\n\n- **Company:** Arm Holdings\n- **Competitors listed (`competes_with` relationships):** 7\n\nThe query returned only the top row, so it doesn't show who the competitors are or how other companies compare.",
+  "gremlin": "g.V().hasLabel('company').project('name', 'count').by('name').by(out('competes_with').count()).order().by(select('count'), desc).limit(1)",
+  "secs": 5.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 32,
+  "section": "Aggregation",
+  "questions": [
+   "What was the largest acquisition?"
+  ],
+  "expected": "Broadcom Inc. -> VMware (69,000 million dollars, 2023)",
+  "answer": "The largest acquisition in the data was Broadcom Inc.'s purchase of VMware (1 result in total).\n\n- **Acquirer:** Broadcom Inc.\n- **Acquired:** VMware\n- **Amount:** $69,000 million (about $69 billion)\n- **Year:** 2023",
+  "gremlin": "g.E().hasLabel('acquired').order().by('amount_usd_million', desc).limit(1).project('acquirer', 'acquired', 'amount_usd_million', 'year').by(outV().values('name')).by(inV().values('name')).by('amount_usd_million').by(coalesce(values('year'), constant('')))",
+  "secs": 5.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 33,
+  "section": "Aggregation",
+  "questions": [
+   "List the top 3 companies by number of founders"
+  ],
+  "expected": "AMD (8), Qualcomm (7), Intel (3)",
+  "answer": "The top 3 companies by number of founders are Qualcomm, Intel, and Nvidia (3 results in total).\n\n| Rank | Company | Founders |\n|---|---|---|\n| 1 | Qualcomm | 7 |\n| 2 | Intel | 3 |\n| 3 | Nvidia | 3 |\n\nIntel and Nvidia are tied at 3 founders each. The query's `limit(3)` cut off the list there, so other companies could also have 3 founders.",
+  "gremlin": "g.V().hasLabel('company').project('name', 'count').by('name').by(out('founded_by').count()).order().by(select('count'), desc).limit(3)",
+  "secs": 5.3
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 34,
+  "section": "Follow-up questions",
+  "questions": [
+   "Who founded Nvidia?",
+   "Which of them is the CEO?"
+  ],
+  "expected": "Jensen Huang",
+  "answer": "_Interpreted as: Which of Curtis Priem, Jensen Huang, and Chris Malachowsky is the CEO of Nvidia?_\n\nOf the three people, only Jensen Huang is returned as the CEO of Nvidia (1 result in total).\n\n- **Jensen Huang**: has a `ceo_of` relationship to a company whose name contains \"Nvidia.\"\n\nCurtis Priem and Chris Malachowsky were not returned, so the query found no CEO link to Nvidia for them.",
+  "gremlin": "g.V().hasLabel('person').has('name', within('Curtis Priem', 'Jensen Huang', 'Chris Malachowsky')).where(out('ceo_of').hasLabel('company').has('name', TextP.containing('Nvidia'))).values('name')",
+  "secs": 12.5
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 35,
+  "section": "Follow-up questions",
+  "questions": [
+   "Which companies did Broadcom Inc. acquire?",
+   "Which of those cost more than 5,000 million dollars?"
+  ],
+  "expected": "VMware (69,000), Broadcom Corporation (37,000), LSI Corporation (6,600)",
+  "answer": "_Interpreted as: Which of VMware, CyOptics, PLX Technology, LSI Corporation, Emulex Corporation, and Broadcom Corporation cost more than 5,000 million dollars?_\n\nThree of the six companies cost more than 5,000 million dollars: VMware, LSI Corporation, and Broadcom Corporation.\n\n- **VMware:** 69,000 million USD\n- **Broadcom Corporation:** 37,000 million USD\n- **LSI Corporation:** 6,600 million USD\n\nCyOptics, PLX Technology, and Emulex Corporation do not appear in the result, so none of their acquisitions exceeded 5,000 million USD. The result alone does not show whether they have a lower recorded amount or no matching acquisition at all.",
+  "gremlin": "g.V().hasLabel('company').or(has('name', TextP.containing('VMware')), has('name', TextP.containing('CyOptics')), has('name', TextP.containing('PLX Technology')), has('name', TextP.containing('LSI Corporation')), has('name', TextP.containing('Emulex Corporation')), has('name', TextP.containing('Broadcom Corporation'))).as('target').inE('acquired').has('amount_usd_million', P.gt(5000)).project('name', 'amount_usd_million').by(select('target').values('name')).by('amount_usd_million')",
+  "secs": 14.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 36,
+  "section": "Follow-up questions",
+  "questions": [
+   "Which products are GPUs?",
+   "Where are the companies that develop them headquartered?"
+  ],
+  "expected": "Santa Clara, California (Nvidia, Intel), Cambridge (Arm Holdings)",
+  "answer": "_Interpreted as: Where are the companies that develop Mali, GeForce, Intel Arc, Immortalis, and graphics processing units headquartered?_\n\nThe 5 results show these products' developers are headquartered in either Cambridge or Santa Clara.\n\n- **Mali**: Arm Holdings, Cambridge\n- **Immortalis**: Arm Holdings, Cambridge\n- **GeForce**: Nvidia, Santa Clara\n- **Intel Arc**: Intel, Santa Clara\n- **Graphics processing units**: Advanced Micro Devices, Inc., Santa Clara\n\nArm Holdings (Cambridge) develops two of the products. Nvidia, Intel, and AMD are all in Santa Clara.",
+  "gremlin": "g.V().hasLabel('product').has('name', within('Mali', 'GeForce', 'Intel Arc', 'Immortalis', 'graphics processing units')).as('p').in('develops').as('c').out('headquartered_in').as('city').select('p', 'c', 'city').by('name').by('name').by('name')",
+  "secs": 12.3
+ }
+]

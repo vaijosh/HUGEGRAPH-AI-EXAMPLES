@@ -1,0 +1,30 @@
+Title: Qualcomm
+Source: https://en.wikipedia.org/wiki/Qualcomm
+
+Qualcomm Incorporated () is an American multinational technology corporation headquartered in San Diego, California. The company develops and designs technologies for global communications and computing, including next-generation mobile networks, smart devices, and semiconductors — such as mobile processors and artificial intelligence chips. The company holds essential patents for global mobile communication standards including 5G, 4G, CDMA2000, TD-SCDMA and WCDMA.
+
+Founded in 1985 by Irwin Jacobs and six other co-founders, Qualcomm's early research into code-division multiple access (CDMA) wireless technology  was financed through revenue from its Omnitracs satellite communications system. CDMA was later adopted as a 2G standard in North America, incorporating Qualcomm patents. This adoption led to licensing disputes over pricing and access to essential patents.
+
+Over time, Qualcomm expanded into semiconductor products, operating largely under a fabless manufacturing model. Its Snapdragon line of processors is widely used in smartphones and other smart devices by multiple manufacturers. In recent years, Qualcomm has been expanding into areas including embedded artificial intelligence, automotive applications, the Internet of Things (IoT), augmented reality, and virtual reality, in addition to developing the Dragonwing product line, aimed at industrial and enterprise solutions with a focus on embedded AI, edge computing, and advanced connectivity.
+
+In addition to its technological activities, Qualcomm has faced legal and regulatory disputes in several countries, particularly concerning patent licensing and competition practices. The company has been involved in antitrust cases led by authorities in the United States, the European Union, and Asia, as well as litigation with manufacturers such as Apple.
+
+History
+
+Early history
+
+Qualcomm was established on July 1, 1985 by seven former Linkabit employees led by Irwin Jacobs. Other co-founders included Andrew Viterbi, Franklin Antonio, Adelia Coffman, Andrew Cohen, Klein Gilhousen, and Harvey White. The company was named Qualcomm for "Quality Communications". It started as a contract research and development center largely for government and defense projects.
+
+Qualcomm merged with Omninet in 1988 and raised $3.5 million in funding to produce the Omnitracs satellite communications system for trucking companies. Qualcomm grew from eight employees in 1986 to 620 employees in 1991, due to demand for Omnitracs. By 1989, Qualcomm had $32 million in revenue, 50 percent of which was from an Omnitracs contract with Schneider National. Omnitracs profits helped fund Qualcomm's research and development into code-division multiple access (CDMA) technologies for cell phone networks.
+
+1990–2015
+
+Qualcomm was operating at a loss in the 1990s due to its investment in CDMA research. To obtain funding, the company filed an initial public offering in September 1991, raising $68 million. An additional $486 million was raised in 1995 through the sale of 11.5 million more shares. The second funding round was done to raise money for the mass manufacturing of CDMA-based phones, base-stations, and equipment, after most US-based cellular networks announced they would adopt the CDMA standard. The company had $383 million in annual revenue in 1995 and $814 million by 1996.
+
+In 1998, Qualcomm was restructured, leading to a 700-employee layoff. Its base station and cell-phone manufacturing businesses were spun-off in order to focus on its higher-margin patents and chipset businesses. Since the base station division was losing $400M a year (having never sold another base station after making its 10th sale), profits skyrocketed in the following year, and Qualcomm was the fastest growing stock on the market with a 2,621 percent growth over one year. By 2000, Qualcomm had grown to 6,300 employees, $3.2 billion in revenues, and $670 million in profit. 39 percent of its sales were from CDMA technology, followed by licensing (22%), wireless (22%), and other products (17%). Around this time, Qualcomm established offices in Europe, Asia Pacific, and in the Americas. By 2001, 65 percent of Qualcomm's revenues originated from outside the United States with 35 percent coming from South Korea.
+
+In 2005, Paul E. Jacobs, son of Qualcomm founder Irwin Jacobs, was appointed as Qualcomm's new CEO. Whereas Irwin Jacobs focused on CDMA patents, Paul Jacobs refocused much of Qualcomm's new research and development on projects related to the Internet of things. In the same year they acquired Flarion Technologies, a developer of wireless broadband Orthogonal Frequency Division Multiplex Access (OFDMA) technology.
+
+Qualcomm announced Steven Mollenkopf would succeed Paul Jacobs as CEO in December 2013. Mollenkopf said he would expand Qualcomm's focus to wireless technology for cars, wearable devices, and other new markets.
+
+2015–2024: NXP, Broadcom and Nuvia

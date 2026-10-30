@@ -1,0 +1,22 @@
+{
+  "vertexlabels": [
+    {"name": "person", "primary_keys": ["name"], "properties": ["name", "age", "residence", "occupation"]},
+    {"name": "organization", "primary_keys": ["name"], "properties": ["name", "org_type", "location"]},
+    {"name": "agency", "primary_keys": ["name"], "properties": ["name", "agency_type"]},
+    {"name": "offense", "primary_keys": ["name"], "properties": ["name"]}
+  ],
+  "edgelabels": [
+    {"name": "employed_by", "source_label": "person", "target_label": "organization", "properties": ["position"]},
+    {"name": "owns", "source_label": "person", "target_label": "organization", "properties": []},
+    {"name": "defrauded", "source_label": "person", "target_label": "organization", "properties": ["amount"]},
+    {"name": "conspired_with", "source_label": "person", "target_label": "person", "properties": []},
+    {"name": "charged_with", "source_label": "person", "target_label": "offense", "properties": ["status", "date"]},
+    {"name": "sentenced_by", "source_label": "person", "target_label": "person", "properties": ["sentence", "date"]},
+    {"name": "prosecuted_by", "source_label": "person", "target_label": "agency", "properties": []},
+    {"name": "investigated_by", "source_label": "person", "target_label": "agency", "properties": []}
+  ],
+  "propertykeys": [
+    {"name": "age", "data_type": "INT", "cardinality": "SINGLE"},
+    {"name": "amount", "data_type": "DOUBLE", "cardinality": "SINGLE"}
+  ]
+}

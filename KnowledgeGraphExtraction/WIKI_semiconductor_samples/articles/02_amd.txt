@@ -1,0 +1,24 @@
+Title: AMD
+Source: https://en.wikipedia.org/wiki/AMD
+
+Advanced Micro Devices, Inc. (AMD) is an American multinational semiconductor company headquartered in Santa Clara, California. It develops central processing units (CPUs), graphics processing units (GPUs), field-programmable gate arrays (FPGAs), system-on-chips (SoCs), and high-performance computer components. AMD serves a wide range of business and consumer markets, including personal computers (PCs), gaming, data centers, and embedded systems.
+
+AMD's main products include microprocessors, embedded processors, and graphics processors for servers, workstations, PCs, and embedded system applications, as well as chipsets for motherboards. The company has also expanded into new markets, such as data centers, gaming, and high-performance computing. AMD's processors are used in a wide range of computing devices, including PCs, servers, laptops, and gaming consoles. Initially manufacturing its own processors, the company outsourced its manufacturing after GlobalFoundries was spun off in 2009. Through its Xilinx acquisition in 2022, AMD offers field-programmable gate array (FPGA) products.
+
+AMD was founded in 1969 by Jerry Sanders and a group of his fellow Fairchild Semiconductor colleagues. The company's early products were primarily memory chips and other computer components. In 1975, AMD entered the microprocessor market, competing with Intel, its main rival in the industry, by reverse-engineering Intel's 8080. This led to the initial cross-license agreement allowing AMD to build legal clones of Intel processors, including the x86 family of processors from 1981. The two companies fought a seven-year legal battle after Intel refused to share the blueprint of their i386 with AMD, ending in the latter's favor in 1994 but requiring AMD to develop their own x86 microprocessors in-house. In the early 2000s, AMD experienced significant growth and success, partly due to its strong position in the PC market and its Athlon and Opteron processors. The company faced challenges in the late 2000s and early 2010s, as it struggled to compete with Intel.
+
+In the late 2010s, AMD regained market share by pursuing a penetration pricing strategy for its Ryzen processors, offering a competitive performance and lower costs than Intel microprocessors. In 2022, AMD surpassed Intel by market capitalization for the first time.
+
+History
+
+Foundational years
+
+Advanced Micro Devices was formally incorporated by Jerry Sanders, along with seven of his colleagues from Fairchild Semiconductor—Ed Turney; John Carey; Sven Simonsen; Jack Gifford, and three members of his team: Frank Botte, Jim Giles, and Larry Stenger, on May 1, 1969. Sanders, an electrical engineer who was the director of marketing at Fairchild, had, like many of its executives, grown frustrated with the increasing lack of support, opportunity, and flexibility within the company. He later decided to leave to start his own semiconductor company, following the footsteps of Robert Noyce (developer of the first silicon integrated circuit at Fairchild in 1959) and Gordon Moore, who together founded the semiconductor company Intel in July 1968.
+
+In September 1969, AMD moved from its temporary location in Santa Clara to its new $500,000 15,000sqft headquarters at 901 Thompson Place, Sunnyvale, which housed the entire company, including the 8-mask, 7 μm feature size, 2-inch diameter wafer production. To immediately secure a customer base, AMD initially became a second source supplier of microchips designed by Fairchild (the 5 V TTL "9300" logic series) and National Semiconductor. AMD first focused on producing logic chips. The company guaranteed quality control to United States Military Standard, an advantage in the early computer industry since unreliability in microchips was a distinct problem that customers – including computer manufacturers, the telecommunications industry, and instrument manufacturers – wanted to avoid.
+
+In November 1969, the company manufactured its first product: the Am9300, a 4-bit MSI shift register, which began selling in 1970. Also in 1970, AMD produced its first proprietary product, the Am2501 logic counter, which was highly successful. Its bestselling product in 1971 was the Am2505, the fastest multiplier available.
+
+In 1971, AMD entered the RAM chip market, beginning with the Am3101, a 64-bit bipolar RAM. That year AMD also greatly increased the sales volume of its linear integrated circuits, and by year-end the company's total annual sales reached US$4.6 million.
+
+AMD went public in September 1972. The company was a second source for Intel MOS/LSI circuits by 1973, with products such as Am14/1506 and Am14/1507, dual 100-bit dynamic shift registers. By 1975, AMD was producing 212 products – of which 49 were proprietary, including the Am9102 (a static N-channel 1024-bit RAM) and three low-power Schottky MSI circuits: Am25LS07, Am25LS08, and Am25LS09.

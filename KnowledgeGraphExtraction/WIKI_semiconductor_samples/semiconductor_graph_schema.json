@@ -1,0 +1,24 @@
+{
+  "vertexlabels": [
+    {"name": "company", "primary_keys": ["name"], "properties": ["name", "founded_year", "market_cap_billion_usd"]},
+    {"name": "person", "primary_keys": ["name"], "properties": ["name"]},
+    {"name": "product", "primary_keys": ["name"], "properties": ["name"]},
+    {"name": "location", "primary_keys": ["name"], "properties": ["name"]}
+  ],
+  "edgelabels": [
+    {"name": "founded", "source_label": "person", "target_label": "company", "properties": []},
+    {"name": "ceo_of", "source_label": "person", "target_label": "company", "properties": []},
+    {"name": "worked_at", "source_label": "person", "target_label": "company", "properties": []},
+    {"name": "headquartered_in", "source_label": "company", "target_label": "location", "properties": []},
+    {"name": "develops", "source_label": "company", "target_label": "product", "properties": []},
+    {"name": "acquired", "source_label": "company", "target_label": "company", "properties": ["year", "amount_million_usd"]},
+    {"name": "invested_in", "source_label": "company", "target_label": "company", "properties": ["year", "amount_million_usd"]},
+    {"name": "competes_with", "source_label": "company", "target_label": "company", "properties": []}
+  ],
+  "propertykeys": [
+    {"name": "founded_year", "data_type": "INT", "cardinality": "SINGLE"},
+    {"name": "market_cap_billion_usd", "data_type": "DOUBLE", "cardinality": "SINGLE"},
+    {"name": "year", "data_type": "INT", "cardinality": "SINGLE"},
+    {"name": "amount_million_usd", "data_type": "DOUBLE", "cardinality": "SINGLE"}
+  ]
+}

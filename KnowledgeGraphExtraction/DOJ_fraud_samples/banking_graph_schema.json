@@ -1,0 +1,30 @@
+{
+  "vertexlabels": [
+    {"name": "defendant", "primary_keys": ["name"], "properties": ["name", "age", "residence", "loss_amount", "plea_status", "sentencing_date"]},
+    {"name": "offense", "primary_keys": ["name"], "properties": ["name", "max_prison_years"]},
+    {"name": "bank", "primary_keys": ["name"], "properties": ["name"]},
+    {"name": "agency", "primary_keys": ["name"], "properties": ["name"]},
+    {"name": "prosecutor", "primary_keys": ["name"], "properties": ["name", "title"]},
+    {"name": "judge", "primary_keys": ["name"], "properties": ["name"]},
+    {"name": "attorney_office", "primary_keys": ["name"], "properties": ["name"]}
+  ],
+  "edgelabels": [
+    {"name": "charged_with", "source_label": "defendant", "target_label": "offense", "properties": ["count"]},
+    {"name": "defrauded", "source_label": "defendant", "target_label": "bank", "properties": []},
+    {"name": "co_conspirator", "source_label": "defendant", "target_label": "defendant", "properties": []},
+    {"name": "investigated", "source_label": "agency", "target_label": "defendant", "properties": []},
+    {"name": "prosecutes", "source_label": "prosecutor", "target_label": "defendant", "properties": []},
+    {"name": "presides_over", "source_label": "judge", "target_label": "defendant", "properties": []},
+    {"name": "works_at", "source_label": "prosecutor", "target_label": "attorney_office", "properties": []}
+  ],
+  "propertykeys": [
+    {"name": "age", "data_type": "INT", "cardinality": "SINGLE"},
+    {"name": "residence", "data_type": "TEXT", "cardinality": "SINGLE"},
+    {"name": "loss_amount", "data_type": "DOUBLE", "cardinality": "SINGLE"},
+    {"name": "plea_status", "data_type": "TEXT", "cardinality": "SINGLE"},
+    {"name": "sentencing_date", "data_type": "DATE", "cardinality": "SINGLE"},
+    {"name": "max_prison_years", "data_type": "INT", "cardinality": "SINGLE"},
+    {"name": "title", "data_type": "TEXT", "cardinality": "SINGLE"},
+    {"name": "count", "data_type": "INT", "cardinality": "SINGLE"}
+  ]
+}

@@ -1,0 +1,13 @@
+Each record is a raw SWIFT MT message. Blocks: {1:F01<12-char BIC of the sending bank><session>} ,
+{2:I<3-digit type><12-char BIC of the receiving bank>...} for input messages, or {2:O<type><time><date><sender BIC>...}
+for output messages; the MT type is the 3 digits after I/O (101, 103, 110, 202). Block {4: ... -} holds the fields.
+A BIC is an 8 or 11/12 character bank code like ALPHUS33AXXX; treat each BIC as a bank.
+Fields: :20: sender's reference (message id). :21: related reference. :32A: value date (YYMMDD) + currency + amount
+(comma is the decimal separator, e.g. USD31757,17 = 31757.17 USD). :32B: currency + amount. :30: execution/issue date.
+:50K: / :50H: / :50F: ordering customer: first line "/account", then name, then address.
+:52A: / :52D: ordering institution (52A is a BIC; 52D is "/account", name, address).
+:53A: sender's correspondent bank. :54A: receiver's correspondent bank. :56A: intermediary bank.
+:57A: account-with institution (beneficiary's bank).
+:58A: / :58D: beneficiary institution. :59: beneficiary customer: "/account", then name, then address.
+:70: remittance information. :71A: charges (SHA/OUR/BEN). :72: sender-to-receiver information.
+Names and addresses are separate lines; use the line after "/account" as the name.

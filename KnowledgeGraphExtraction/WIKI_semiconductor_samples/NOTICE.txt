@@ -1,0 +1,8 @@
+These files are excerpts (the opening sections, about 5,000 characters each) of English Wikipedia articles,
+retrieved on 2026-10-26 through the MediaWiki API as plain text. Wikipedia text is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license (https://creativecommons.org/licenses/by-sa/4.0/); the authors are the
+Wikipedia contributors listed in each article's history. sources.csv gives each article's URL. The excerpts are
+unmodified apart from the Title / Source header and the removal of section breaks.
+
+Use them as a second, non-legal test dataset for graphrag_showcase.py: companies, founders and executives,
+headquarters, products and acquisitions.

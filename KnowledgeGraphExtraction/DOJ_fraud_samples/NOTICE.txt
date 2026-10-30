@@ -1,0 +1,8 @@
+These documents are U.S. Department of Justice press releases, retrieved on 2026-10-23 from the public
+DOJ press-release API (https://www.justice.gov/api/v1/press_releases.json). Works of the U.S. federal
+government are in the public domain. Text was converted from HTML to plain text; images and standard
+closing boilerplate (presumption of innocence, maximum-penalty statements, contact details) were removed.
+sources.csv lists the original URL, office and date of every file.
+
+The releases name real people. Charged defendants are presumed innocent unless and until proven guilty;
+treat this folder as demo data only and do not publish graphs built from it as statements of fact.

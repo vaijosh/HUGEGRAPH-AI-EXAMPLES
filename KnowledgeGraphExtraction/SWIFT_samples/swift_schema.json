@@ -1,0 +1,18 @@
+{
+  "vertexlabels": [
+    {"name": "bank", "primary_keys": ["bic"], "properties": ["bic", "name"]},
+    {"name": "party", "primary_keys": ["name"], "properties": ["name", "account", "address"]},
+    {"name": "message", "primary_keys": ["reference"],
+     "properties": ["reference", "mt_type", "value_date", "amount", "currency", "remittance_info"]}
+  ],
+  "edgelabels": [
+    {"name": "sent", "source_label": "bank", "target_label": "message", "properties": []},
+    {"name": "received", "source_label": "bank", "target_label": "message", "properties": []},
+    {"name": "ordered", "source_label": "party", "target_label": "message", "properties": []},
+    {"name": "beneficiary_of", "source_label": "party", "target_label": "message", "properties": []},
+    {"name": "routed_via", "source_label": "message", "target_label": "bank", "properties": ["role"]}
+  ],
+  "propertykeys": [
+    {"name": "amount", "data_type": "DOUBLE", "cardinality": "SINGLE"}
+  ]
+}

@@ -1,0 +1,9 @@
+file,title,url,chars
+articles/01_nvidia.txt,Nvidia,https://en.wikipedia.org/wiki/Nvidia,4706
+articles/02_amd.txt,AMD,https://en.wikipedia.org/wiki/AMD,4892
+articles/03_intel.txt,Intel,https://en.wikipedia.org/wiki/Intel,4662
+articles/04_arm-holdings.txt,Arm Holdings,https://en.wikipedia.org/wiki/Arm_Holdings,4901
+articles/05_qualcomm.txt,Qualcomm,https://en.wikipedia.org/wiki/Qualcomm,4942
+articles/06_tsmc.txt,TSMC,https://en.wikipedia.org/wiki/TSMC,4263
+articles/07_asml.txt,ASML,https://en.wikipedia.org/wiki/ASML,4854
+articles/08_broadcom.txt,Broadcom,https://en.wikipedia.org/wiki/Broadcom,4833

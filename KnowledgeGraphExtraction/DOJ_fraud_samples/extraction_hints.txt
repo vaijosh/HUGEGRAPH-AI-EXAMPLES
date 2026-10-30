@@ -1,0 +1,27 @@
+Each document is a U.S. Department of Justice press release about a bank or insurance fraud case.
+The header lines Title / Date / Office / Source describe the release; Date is the release date.
+People: defendants (e.g. "Brendan Lawler, 59, of New Bedford" -> name, age 59, residence New Bedford), judges
+("U.S. District Judge Myong J. Joun"), prosecutors and agents. Use the full name without titles, ages or
+aliases; "a/k/a" names belong to the same person. Write names in normal case even when the text uses CAPITALS.
+Every person vertex must have a first and last name. When the text refers to someone by surname only
+("Vernot", "Luneke", "the Lawlers"), use the full name given earlier in the same text ("Phalentz Vernot";
+"the Lawlers" -> "Brendan Lawler" and "Lisa Lawler"). If the full name does not appear in the text you were
+given, do not create a person for the surname alone and do not add edges for them.
+Organizations are private-sector only: banks, credit unions, insurers, insurance agencies/brokerages, title and
+escrow companies, and businesses owned or used by defendants. org_type is one of: bank, credit union, insurer,
+insurance agency, title company, lender, business.
+Agencies are every government body - never label these organization: U.S. Attorney's Offices, FBI, IRS Criminal
+Investigation, U.S. Postal Inspection Service, Homeland Security Investigations, FDIC / Federal Reserve / FHFA
+Offices of Inspector General, state attorneys general, state insurance departments and fraud bureaus, state
+police, county sheriff's offices and city/town police departments, and courts. Name a U.S. Attorney's Office
+with its district, e.g. "U.S. Attorney's Office, District of Massachusetts", using the Office header if the text
+does not say. agency_type is one of: prosecutor, law enforcement, inspector general, regulator, court.
+Officials who announce, investigate or prosecute a case (U.S. Attorneys, Assistant U.S. Attorneys, Special
+Agents in Charge, police chiefs) are not employees of an organization: do not create employed_by edges for them;
+link the defendant to their agency with prosecuted_by or investigated_by instead.
+Offenses: short lowercase names such as bank fraud, wire fraud, mail fraud, money laundering,
+aggravated identity theft, conspiracy to commit bank fraud, insurance fraud, arson, tax evasion.
+charged_with.status is charged, pleaded guilty, convicted or sentenced, matching what the release says.
+sentenced_by goes from the defendant to the judge; sentence is the prison term, e.g. "36 months".
+Amounts are plain numbers in U.S. dollars: "$4.3 million" -> 4300000, "$962,000" -> 962000.
+Ignore boilerplate about the presumption of innocence, maximum penalties and contact details.

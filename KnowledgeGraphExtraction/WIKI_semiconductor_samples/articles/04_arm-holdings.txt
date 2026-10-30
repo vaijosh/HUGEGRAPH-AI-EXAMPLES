@@ -1,0 +1,32 @@
+Title: Arm Holdings
+Source: https://en.wikipedia.org/wiki/Arm_Holdings
+
+Arm Holdings plc is a British semiconductor and software design company headquartered in Cambridge, whose primary business is the design of central processing unit (CPU) cores that implement the ARM architecture family of instruction sets. It also designs other chips, provides software development tools under the DS-5, RealView and Keil brands, and provides systems and platforms, system-on-chip (SoC) infrastructure and software. As a holding company, it also holds shares of other companies. Since 2016, it has been majority owned by Japanese conglomerate SoftBank Group.
+
+"ARM" was originally an acronym for Acorn RISC Machine and later for Advanced RISC Machines. While ARM CPUs first appeared in the Acorn Archimedes, a desktop computer, today's systems include mostly embedded systems, including ARM CPUs used in virtually all modern smartphones, up to used in the fastest supercomputer. Processors based on designs licensed from Arm, or designed by licensees of one of the ARM instruction set architectures, are used in all classes of computing devices. Arm has two lines of graphics processing units (GPUs), Mali, and the newer Immortalis (which includes hardware-based ray-tracing).
+
+Arm's main CPU competitors in servers include IBM, Intel and AMD. Intel competed with ARM-based chips in mobile devices but Arm no longer has any competition in that space (although vendors of actual ARM-based chips compete within that arena). Arm's main GPU competitors include mobile GPUs from technology companies Imagination Technologies (PowerVR), Qualcomm (Adreno), and increasingly Nvidia, AMD, Samsung and Intel. While competing in GPUs, Qualcomm, Samsung and Nvidia all have combined their GPUs with Arm-licensed CPUs.
+
+Arm had a primary listing on the London Stock Exchange (LSE) and was a constituent of the FTSE 100 Index. It also had a secondary listing of American depositary receipts on New York's Nasdaq. However, Japanese multinational conglomerate SoftBank Group made an agreed offer for Arm on 18 July 2016, subject to approval by Arm's shareholders, valuing the company at £24.3 billion. The transaction was completed on 5 September 2016. A planned takeover deal by Nvidia, announced in 2020, collapsed in February 2022, with SoftBank subsequently deciding to pursue an initial public offering on the Nasdaq in 2023, valuing Arm at US$54.5 billion.
+
+History
+
+Name
+
+The acronym ARM was first used in 1983 and originally stood for "Acorn RISC Machine". Acorn Computers' first RISC processor was used in the original Acorn Archimedes and was one of the first RISC processors used in small computers. However, when the company was incorporated in 1990, what 'ARM' stood for changed to "Advanced RISC Machines". According to Steve Furber the name was changed at the behest of Apple, which did not wish to have the name of a competitor in the name of the company. At the time of the IPO in 1998, the company name was changed to "ARM Holdings", often just called ARM like the processors.
+
+On 1 August 2017, the styling and logo were changed. The logo is now all lowercase ('arm') and other uses of the name are in sentence case ('Arm').
+
+Founding
+
+The company was founded on 12 November 1990 as Widelogic Limited but this was rapidly changed, on 3 December 1990, to Advanced RISC Machines Limited and structured as a joint venture between Acorn Computers, Apple, and VLSI Technology. Acorn provided 12 employees, VLSI provided tools, Apple provided a US$3 million investment (equivalent to $7 million in 2025). Larry Tesler, Apple VP was a key person and he helped recruit the first CEO at the joint venture, Robin Saxby. The new company intended to further the development of the Acorn RISC Machine processor, which was originally used in the Acorn Archimedes and had been selected by Apple for its Newton project. Its first profitable year was 1993. The company's Silicon Valley and Tokyo offices were opened in 1994. ARM invested in Palmchip Corporation in 1997 to provide system on chip platforms and to enter into the disk drive market. In 1998, the company changed its name from Advanced RISC Machines Ltd to ARM Ltd. The company was first listed on the London Stock Exchange (LSE) and Nasdaq in 1998 and by February 1999, Apple's shareholding had fallen to 14.8 per cent.
+
+In 2010, ARM joined with IBM, Texas Instruments, Samsung, ST-Ericsson (since dissolved) and Freescale Semiconductor (now NXP Semiconductors) in forming a non-profit open source engineering company, Linaro.
+
+Acquisitions and divestments
+
+Reported approach for Cerebras Systems
+
+In May 2026, Bloomberg News reported that Arm Holdings and its majority owner, SoftBank Group, had made a preliminary approach to acquire the wafer-scale integrated circuit maker Cerebras Systems, in the weeks before Cerebras's planned initial public offering. According to the report, the approach was rebuffed.
+
+Changes of ownership

@@ -1,0 +1,14 @@
+SWIFT MESSAGE TRACE LOG
+TIMESTAMP: 2026-10-16 10:00:00 UTC
+
+Transaction ID: TRN-9981 (Customer Payment)
+Ordering Customer: TechCorp Inc (Account: 100456)
+Beneficiary Customer: GlobalSupplies Ltd (Account: 998877)
+
+Message Sequence:
+1. Bank of America (BIC: BOFAUS3N) generated an MT103 message for $1.5M directed to DBS Bank Singapore (BIC: DBSSSGSG).
+2. Because BOFAUS3N and DBSSSGSG do not have a direct bilateral relationship, BOFAUS3N routed the payment through an intermediary.
+3. BOFAUS3N sent the MT103 Customer Instruction to DBSSSGSG directly via the SWIFT network.
+4. BOFAUS3N simultaneously sent an MT202 Cover Payment to Standard Chartered NY (BIC: SCBLUS33), instructing them to move the actual funds.
+5. Standard Chartered NY (BIC: SCBLUS33) transferred funds internally to Standard Chartered Singapore (BIC: SCBLSGSG).
+6. Log Alert: Standard Chartered Singapore (BIC: SCBLSGSG) failed to send the final MT202 Cover Payment to DBS Bank Singapore (BIC: DBSSSGSG) due to an AML hold on TechCorp Inc.

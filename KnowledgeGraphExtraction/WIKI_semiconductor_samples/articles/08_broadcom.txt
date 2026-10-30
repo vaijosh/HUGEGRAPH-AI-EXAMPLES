@@ -1,0 +1,42 @@
+Title: Broadcom
+Source: https://en.wikipedia.org/wiki/Broadcom
+
+Broadcom Inc. is an American multinational designer, developer, manufacturer, and global supplier of a wide range of semiconductor and infrastructure software products. Broadcom's product offerings serve the data center, networking, software, broadband, wireless, storage, and industrial markets. As of 2026, Broadcom is one of the largest companies globally.
+
+In December 2024, Broadcom became the 12th company to surpass a $1 trillion market cap. In April 2026, Broadcom surpassed a $2 trillion market cap, becoming the sixth company in history to do so. As of 2025, some 58% of Broadcom's revenue came from its semiconductor-based products and 42% from its infrastructure software products and services.
+
+Tan Hock Eng is the company's president and CEO. The company is headquartered in Palo Alto, California. Avago Technologies Limited changed its name to Broadcom to acquire Broadcom Corporation in January 2016. Avago's ticker symbol AVGO now represents the merged entity. The Broadcom Corporation ticker symbol BRCM was retired. Initially the merged entity was known as Broadcom Limited, before assuming the current name in November 2017.
+
+In October 2019, the European Union issued an interim antitrust order against Broadcom concerning anticompetitive business practices which allegedly violate European Union competition law.
+
+In May 2022, Broadcom announced an agreement to acquire VMware in a cash-and-stock transaction valued at $69 billion. The acquisition was closed on November 22, 2023.
+
+History
+
+Origin in Hewlett-Packard
+
+The company that would later become Broadcom Inc. was established in 1961 as HP Associates, a semiconductor products division of Hewlett-Packard.
+
+The division separated from Hewlett-Packard as part of the Agilent Technologies spinoff in 1999.
+
+Formation of Avago Technologies
+
+KKR and Silver Lake Partners acquired the Semiconductor Products Group of Agilent Technologies in 2005 for $2.6 billion and formed Avago Technologies. Avago Technologies agreed to sell its I/O solutions unit to PMC-Sierra for $42.5 million in October 2005.
+
+In August 2008, the company filed an initial public offering of $400 million. In October 2008, Avago Technologies acquired Infineon Technologies' Munich-based bulk acoustic wave business for €21.5 million.
+
+On 6 August 2009, Avago Technologies went public on NASDAQ with the ticker symbol AVGO.
+
+Avago Technologies announced its agreement to acquire CyOptics, an optical chip and component supplier, for $400 million in April 2013. The acquisition aimed to expand Avago Technologies' fiber optics product portfolio. In October 2013, Avago Technologies invested $5 million in Amantys, a power electronics technology provider, as part of a strategic investment agreement between the two companies.
+
+Avago Technologies announced its agreement to acquire LSI Corporation in December 2013 for $6.6 billion. The acquisition helped move Avago Technologies away from specialized products and towards a more mainstream industry, which included chips, especially storage for data centers.
+
+The company sold its SSD controller business to Seagate Technology in May 2014. In August 2014, the company was the ninth-largest semiconductor company. Avago Technologies agreed to sell LSI's Axxia Networking business to Intel for $650 million. The company also agreed to buy PLX Technology, an integrated circuits designer, for $309 million. In February 2015, it was announced that Avago Technologies Limited had reached an agreement to acquire Emulex Corporation for $8 per share in cash.
+
+Acquisition of and change of name to Broadcom Limited
+
+On 28 May 2015, Avago announced that it would buy Broadcom Corporation for $37 billion ($17 billion cash and $20 billion in shares). Avago was the nominal survivor, but the combined company would be named Broadcom Ltd. It would have annual revenue of $15 billion and a market value of $77 billion. Broadcom Corp. strengthened Avago Technologies' patent position significantly in sectors such as mobile, the data center, and the Internet of Things and made the company the ninth largest holder of patents among the top semiconductor vendors, according to an analysis by technology consulting firm LexInnova.
+
+In May 2016, Cypress Semiconductor announced that it acquired Broadcom Corporation's full portfolio of IoT products for $550 million. Under the deal, Cypress acquired Broadcom's IoT products and intellectual property for Wi-Fi, Bluetooth and Zigbee connectivity, as well as Broadcom's WICED platform and SDK for developers. The deal combined Broadcom's developer tools and connectivity technologies for IoT devices with Cypress' own programmable system-on-a-chip (SoC) products that provide memory, computing and graphics processing for low-power devices.
+
+Foreign investment reviews and change of name to Broadcom Inc.

@@ -1,0 +1,5147 @@
+{
+ "01_2025-08-27_new-bedford-couple-charged-defrauding-clients-over-700000-co.txt": {
+  "vertices": [
+   {
+    "id": "1:Brendan Lawler",
+    "label": "person",
+    "properties": {
+     "name": "Brendan Lawler",
+     "age": 58
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Lisa Lawler",
+    "label": "person",
+    "properties": {
+     "name": "Lisa Lawler",
+     "age": 45
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Leah B. Foley",
+    "label": "person",
+    "properties": {
+     "name": "Leah B. Foley",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ted E. Docks",
+    "label": "person",
+    "properties": {
+     "name": "Ted E. Docks",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Meghan Cleary",
+    "label": "person",
+    "properties": {
+     "name": "Meghan Cleary",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:BL Insurance Brokerage, LLC",
+    "label": "organization",
+    "properties": {
+     "name": "BL Insurance Brokerage, LLC",
+     "org_type": "insurance business"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Massachusetts Division of Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "Massachusetts Division of Insurance",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Insurance Fraud Bureau",
+    "label": "organization",
+    "properties": {
+     "name": "Insurance Fraud Bureau",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "spouse_of",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Lisa Lawler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Lisa Lawler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 700000.0,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 700000.0,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Meghan Cleary",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "1:Meghan Cleary",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Ted E. Docks",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 10.8
+ },
+ "01_2026-03-26_new-bedford-couple-pleads-guilty-defrauding-clients-over-750.txt": {
+  "vertices": [
+   {
+    "id": "1:Brendan Lawler",
+    "label": "person",
+    "properties": {
+     "name": "Brendan Lawler",
+     "age": 58
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Lisa Lawler",
+    "label": "person",
+    "properties": {
+     "name": "Lisa Lawler",
+     "age": 46
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Myong J. Joun",
+    "label": "person",
+    "properties": {
+     "name": "Myong J. Joun",
+     "role": "U.S. District Court Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Leah B. Foley",
+    "label": "person",
+    "properties": {
+     "name": "Leah B. Foley",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ted E. Docks",
+    "label": "person",
+    "properties": {
+     "name": "Ted E. Docks",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Meghan Cleary",
+    "label": "person",
+    "properties": {
+     "name": "Meghan Cleary",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:BL Insurance Brokerage, LLC",
+    "label": "organization",
+    "properties": {
+     "name": "BL Insurance Brokerage, LLC",
+     "org_type": "insurance business"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Massachusetts Division of Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "Massachusetts Division of Insurance",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Insurance Fraud Bureau",
+    "label": "organization",
+    "properties": {
+     "name": "Insurance Fraud Bureau",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "spouse_of",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Lisa Lawler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Lisa Lawler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 750000.0,
+     "charge": "conspiracy to commit wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 750000.0,
+     "charge": "conspiracy to commit wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Meghan Cleary",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "1:Meghan Cleary",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Ted E. Docks",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 9.6
+ },
+ "01_2026-07-23_new-bedford-couple-sentenced-defrauding-least-50-clients-ove.txt": {
+  "vertices": [
+   {
+    "id": "1:Brendan Lawler",
+    "label": "person",
+    "properties": {
+     "name": "Brendan Lawler",
+     "age": 59
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Lisa Lawler",
+    "label": "person",
+    "properties": {
+     "name": "Lisa Lawler",
+     "age": 46
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Myong J. Joun",
+    "label": "person",
+    "properties": {
+     "name": "Myong J. Joun",
+     "role": "U.S. District Court Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Leah B. Foley",
+    "label": "person",
+    "properties": {
+     "name": "Leah B. Foley",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ted E. Docks",
+    "label": "person",
+    "properties": {
+     "name": "Ted E. Docks",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Meghan Cleary",
+    "label": "person",
+    "properties": {
+     "name": "Meghan Cleary",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:BL Insurance Brokerage, LLC",
+    "label": "organization",
+    "properties": {
+     "name": "BL Insurance Brokerage, LLC",
+     "org_type": "insurance business"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation, Boston Division",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation, Boston Division",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Massachusetts Division of Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "Massachusetts Division of Insurance",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Insurance Fraud Bureau",
+    "label": "organization",
+    "properties": {
+     "name": "Insurance Fraud Bureau",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "spouse_of",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Lisa Lawler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "2:BL Insurance Brokerage, LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Lisa Lawler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Myong J. Joun",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 8
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "1:Myong J. Joun",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 8
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "1:Meghan Cleary",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "1:Meghan Cleary",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Brendan Lawler",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation, Boston Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Lisa Lawler",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation, Boston Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Ted E. Docks",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation, Boston Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 11.4
+ },
+ "02_2025-01-28_maryland-life-insurance-broker-convicted-20-million-insuranc.txt": {
+  "vertices": [
+   {
+    "id": "1:James William Wilson, Jr.",
+    "label": "person",
+    "properties": {
+     "name": "James William Wilson, Jr.",
+     "age": 77,
+     "occupation": "Life Insurance Broker"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Maureen Wilson",
+    "label": "person",
+    "properties": {
+     "name": "Maureen Wilson",
+     "age": 76
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Erek L. Barron",
+    "label": "person",
+    "properties": {
+     "name": "Erek L. Barron",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Stuart M. Goldberg",
+    "label": "person",
+    "properties": {
+     "name": "Stuart M. Goldberg",
+     "role": "Acting Deputy Assistant Attorney General"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kareem Carter",
+    "label": "person",
+    "properties": {
+     "name": "Kareem Carter",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Matthew P. Phelps",
+    "label": "person",
+    "properties": {
+     "name": "Matthew P. Phelps",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Philip Motsay",
+    "label": "person",
+    "properties": {
+     "name": "Philip Motsay",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Shawn Noud",
+    "label": "person",
+    "properties": {
+     "name": "Shawn Noud",
+     "role": "Trial Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Richard Kelley",
+    "label": "person",
+    "properties": {
+     "name": "Richard Kelley",
+     "role": "Trial Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:IRS-Criminal Investigation Division",
+    "label": "organization",
+    "properties": {
+     "name": "IRS-Criminal Investigation Division",
+     "org_type": "Government Agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Department of Justice Tax Division",
+    "label": "organization",
+    "properties": {
+     "name": "Department of Justice Tax Division",
+     "org_type": "Government Agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAO - Maryland",
+    "label": "organization",
+    "properties": {
+     "name": "USAO - Maryland",
+     "org_type": "Government Agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Maryland Insurance Administration",
+    "label": "organization",
+    "properties": {
+     "name": "Maryland Insurance Administration",
+     "org_type": "Government Agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Maryland Office of The Attorney General",
+    "label": "organization",
+    "properties": {
+     "name": "Maryland Office of The Attorney General",
+     "org_type": "Government Agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "defrauded",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "2:IRS-Criminal Investigation Division",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 20000000.0,
+     "charge": "fraud, money laundering, false tax returns, aggravated identity theft"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "spouse_of",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Maureen Wilson",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Maureen Wilson",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "2:IRS-Criminal Investigation Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Matthew P. Phelps",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Philip Motsay",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Shawn Noud",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Richard Kelley",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Erek L. Barron",
+    "outVLabel": "person",
+    "inV": "2:USAO - Maryland",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Stuart M. Goldberg",
+    "outVLabel": "person",
+    "inV": "2:Department of Justice Tax Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Kareem Carter",
+    "outVLabel": "person",
+    "inV": "2:IRS-Criminal Investigation Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 11.4
+ },
+ "02_2025-03-12_maryland-woman-convicted-20m-insurance-fraud-scheme.txt": {
+  "vertices": [
+   {
+    "id": "1:Maureen Wilson",
+    "label": "person",
+    "properties": {
+     "name": "Maureen Wilson",
+     "age": 77
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:James Wilson",
+    "label": "person",
+    "properties": {
+     "name": "James Wilson"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kelly O. Hayes",
+    "label": "person",
+    "properties": {
+     "name": "Kelly O. Hayes",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Karen E. Kelly",
+    "label": "person",
+    "properties": {
+     "name": "Karen E. Kelly",
+     "role": "Acting Deputy Assistant Attorney General"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kareem A. Carter",
+    "label": "person",
+    "properties": {
+     "name": "Kareem A. Carter",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Matthew Phelps",
+    "label": "person",
+    "properties": {
+     "name": "Matthew Phelps",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Philip Motsay",
+    "label": "person",
+    "properties": {
+     "name": "Philip Motsay",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Shawn Noud",
+    "label": "person",
+    "properties": {
+     "name": "Shawn Noud",
+     "role": "Trial Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Richard Kelley",
+    "label": "person",
+    "properties": {
+     "name": "Richard Kelley",
+     "role": "Trial Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:IRS Criminal Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "IRS Criminal Investigation",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Maryland Insurance Administration",
+    "label": "organization",
+    "properties": {
+     "name": "Maryland Insurance Administration",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Maryland Office of the Attorney General",
+    "label": "organization",
+    "properties": {
+     "name": "Maryland Office of the Attorney General",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Justice Department Tax Division",
+    "label": "organization",
+    "properties": {
+     "name": "Justice Department Tax Division",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAO - Maryland",
+    "label": "organization",
+    "properties": {
+     "name": "USAO - Maryland",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "spouse_of",
+    "outV": "1:Maureen Wilson",
+    "outVLabel": "person",
+    "inV": "1:James Wilson",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Maureen Wilson",
+    "outVLabel": "person",
+    "inV": "1:James Wilson",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Maureen Wilson",
+    "outVLabel": "person",
+    "inV": "2:IRS Criminal Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Maureen Wilson",
+    "outVLabel": "person",
+    "inV": "1:Matthew Phelps",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Maureen Wilson",
+    "outVLabel": "person",
+    "inV": "1:Philip Motsay",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Maureen Wilson",
+    "outVLabel": "person",
+    "inV": "1:Shawn Noud",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Maureen Wilson",
+    "outVLabel": "person",
+    "inV": "1:Richard Kelley",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Kelly O. Hayes",
+    "outVLabel": "person",
+    "inV": "2:USAO - Maryland",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Karen E. Kelly",
+    "outVLabel": "person",
+    "inV": "2:Justice Department Tax Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Kareem A. Carter",
+    "outVLabel": "person",
+    "inV": "2:IRS Criminal Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Matthew Phelps",
+    "outVLabel": "person",
+    "inV": "2:USAO - Maryland",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Philip Motsay",
+    "outVLabel": "person",
+    "inV": "2:USAO - Maryland",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Shawn Noud",
+    "outVLabel": "person",
+    "inV": "2:Justice Department Tax Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Richard Kelley",
+    "outVLabel": "person",
+    "inV": "2:Justice Department Tax Division",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 11.0
+ },
+ "02_2025-07-09_owings-mills-couple-sentenced-roles-20-million-insurance-fra.txt": {
+  "vertices": [
+   {
+    "id": "1:James William Wilson, Jr.",
+    "label": "person",
+    "properties": {
+     "name": "James William Wilson, Jr.",
+     "age": 78,
+     "occupation": "life insurance broker"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Maureen Ann Wilson",
+    "label": "person",
+    "properties": {
+     "name": "Maureen Ann Wilson",
+     "age": 77
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Deborah K. Chasanow",
+    "label": "person",
+    "properties": {
+     "name": "Deborah K. Chasanow",
+     "role": "U.S. District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kelly O. Hayes",
+    "label": "person",
+    "properties": {
+     "name": "Kelly O. Hayes",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Karen E. Kelly",
+    "label": "person",
+    "properties": {
+     "name": "Karen E. Kelly",
+     "role": "Acting Deputy Assistant Attorney General"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kareem A. Carter",
+    "label": "person",
+    "properties": {
+     "name": "Kareem A. Carter",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Matthew P. Phelps",
+    "label": "person",
+    "properties": {
+     "name": "Matthew P. Phelps",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Philip Motsay",
+    "label": "person",
+    "properties": {
+     "name": "Philip Motsay",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Shawn Noud",
+    "label": "person",
+    "properties": {
+     "name": "Shawn Noud",
+     "role": "Trial Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Richard Kelley",
+    "label": "person",
+    "properties": {
+     "name": "Richard Kelley",
+     "role": "Trial Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Stephanie Williamson",
+    "label": "person",
+    "properties": {
+     "name": "Stephanie Williamson",
+     "role": "Trial Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:IRS Criminal Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "IRS Criminal Investigation",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Maryland Insurance Administration",
+    "label": "organization",
+    "properties": {
+     "name": "Maryland Insurance Administration",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Maryland Office of The Attorney General",
+    "label": "organization",
+    "properties": {
+     "name": "Maryland Office of The Attorney General",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Justice Department's Tax Division",
+    "label": "organization",
+    "properties": {
+     "name": "Justice Department's Tax Division",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "spouse_of",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Maureen Ann Wilson",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Maureen Ann Wilson",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Deborah K. Chasanow",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 144,
+     "restitution_amount": 18705520.3
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Maureen Ann Wilson",
+    "outVLabel": "person",
+    "inV": "1:Deborah K. Chasanow",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 48,
+     "restitution_amount": 18705520.3
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Matthew P. Phelps",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Philip Motsay",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Shawn Noud",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Richard Kelley",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Maureen Ann Wilson",
+    "outVLabel": "person",
+    "inV": "1:Matthew P. Phelps",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Maureen Ann Wilson",
+    "outVLabel": "person",
+    "inV": "1:Philip Motsay",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Maureen Ann Wilson",
+    "outVLabel": "person",
+    "inV": "1:Shawn Noud",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Maureen Ann Wilson",
+    "outVLabel": "person",
+    "inV": "1:Richard Kelley",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:James William Wilson, Jr.",
+    "outVLabel": "person",
+    "inV": "2:IRS Criminal Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Maureen Ann Wilson",
+    "outVLabel": "person",
+    "inV": "2:IRS Criminal Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 12.7
+ },
+ "03_2025-06-09_former-president-allentown-title-company-pleads-guilty-defra.txt": {
+  "vertices": [
+   {
+    "id": "1:Louis Belletieri",
+    "label": "person",
+    "properties": {
+     "name": "Louis Belletieri",
+     "age": 43,
+     "role": "defendant"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:David Metcalf",
+    "label": "person",
+    "properties": {
+     "name": "David Metcalf",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jeffrey L. Schmehl",
+    "label": "person",
+    "properties": {
+     "name": "Jeffrey L. Schmehl",
+     "role": "United States District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:John J. Boscia",
+    "label": "person",
+    "properties": {
+     "name": "John J. Boscia",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Rebecca J. Kulik",
+    "label": "person",
+    "properties": {
+     "name": "Rebecca J. Kulik",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Legacy Title",
+    "label": "organization",
+    "properties": {
+     "name": "Legacy Title",
+     "org_type": "title company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Small Business Administration",
+    "label": "organization",
+    "properties": {
+     "name": "Small Business Administration",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:FBI Philadelphia",
+    "label": "organization",
+    "properties": {
+     "name": "FBI Philadelphia",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Lehigh County District Attorney's Office",
+    "label": "organization",
+    "properties": {
+     "name": "Lehigh County District Attorney's Office",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "employed_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "2:Legacy Title",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "2:Small Business Administration",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 825000.0,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "2:FBI Philadelphia",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "2:Lehigh County District Attorney's Office",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "1:John J. Boscia",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "1:Rebecca J. Kulik",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 8.8
+ },
+ "03_2025-10-15_former-president-allentown-title-company-sentenced-54-months.txt": {
+  "vertices": [
+   {
+    "id": "1:Louis Belletieri",
+    "label": "person",
+    "properties": {
+     "name": "Louis Belletieri",
+     "age": 44,
+     "occupation": "Former President of Allentown Title Company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:David Metcalf",
+    "label": "person",
+    "properties": {
+     "name": "David Metcalf",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jeffrey L. Schmehl",
+    "label": "person",
+    "properties": {
+     "name": "Jeffrey L. Schmehl",
+     "role": "United States District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:John J. Boscia",
+    "label": "person",
+    "properties": {
+     "name": "John J. Boscia",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Rebecca J. Kulik",
+    "label": "person",
+    "properties": {
+     "name": "Rebecca J. Kulik",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Legacy Title",
+    "label": "organization",
+    "properties": {
+     "name": "Legacy Title",
+     "org_type": "Title Company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Small Business Administration",
+    "label": "organization",
+    "properties": {
+     "name": "Small Business Administration",
+     "org_type": "Government Agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:FBI Philadelphia",
+    "label": "organization",
+    "properties": {
+     "name": "FBI Philadelphia",
+     "org_type": "Law Enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Lehigh County District Attorney's Office",
+    "label": "organization",
+    "properties": {
+     "name": "Lehigh County District Attorney's Office",
+     "org_type": "Law Enforcement"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "employed_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "2:Legacy Title",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "2:Small Business Administration",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 825000.0,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "1:Jeffrey L. Schmehl",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 54,
+     "restitution_amount": 6000000.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "1:John J. Boscia",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "1:Rebecca J. Kulik",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "2:FBI Philadelphia",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Louis Belletieri",
+    "outVLabel": "person",
+    "inV": "2:Lehigh County District Attorney's Office",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 8.8
+ },
+ "04_2024-10-03_newburyport-man-arrested-scheme-defraud-home-repair-insuranc.txt": {
+  "vertices": [
+   {
+    "id": "1:Christian Decristofaro",
+    "label": "person",
+    "properties": {
+     "name": "Christian Decristofaro",
+     "age": 40,
+     "role": "defendant"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Joshua S. Levy",
+    "label": "person",
+    "properties": {
+     "name": "Joshua S. Levy",
+     "role": "Acting United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jodi Cohen",
+    "label": "person",
+    "properties": {
+     "name": "Jodi Cohen",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Meghan C. Cleary",
+    "label": "person",
+    "properties": {
+     "name": "Meghan C. Cleary",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Leslie A. Wright",
+    "label": "person",
+    "properties": {
+     "name": "Leslie A. Wright",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:NE Premier Home Services LLC",
+    "label": "organization",
+    "properties": {
+     "name": "NE Premier Home Services LLC",
+     "org_type": "home repair company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "defrauded",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "2:NE Premier Home Services LLC",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 1500000.0,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "2:NE Premier Home Services LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "1:Meghan C. Cleary",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "1:Leslie A. Wright",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Jodi Cohen",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 7.1
+ },
+ "04_2025-07-24_newburyport-man-sentenced-two-years-prison-scheme-defraud-ho.txt": {
+  "vertices": [
+   {
+    "id": "1:Christian Decristofaro",
+    "label": "person",
+    "properties": {
+     "name": "Christian Decristofaro",
+     "age": 40
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Indira Talwani",
+    "label": "person",
+    "properties": {
+     "name": "Indira Talwani",
+     "role": "U.S. District Court Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Leah B. Foley",
+    "label": "person",
+    "properties": {
+     "name": "Leah B. Foley",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ted E. Docks",
+    "label": "person",
+    "properties": {
+     "name": "Ted E. Docks",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Meghan C. Cleary",
+    "label": "person",
+    "properties": {
+     "name": "Meghan C. Cleary",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Leslie A. Wright",
+    "label": "person",
+    "properties": {
+     "name": "Leslie A. Wright",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:NE Premier Home Services LLC",
+    "label": "organization",
+    "properties": {
+     "name": "NE Premier Home Services LLC",
+     "org_type": "home repair company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "defrauded",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "2:NE Premier Home Services LLC",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 2196323.0,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "2:NE Premier Home Services LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "1:Indira Talwani",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 24,
+     "restitution_amount": 2196323.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "1:Meghan C. Cleary",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "1:Leslie A. Wright",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Christian Decristofaro",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Ted E. Docks",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 9.3
+ },
+ "05_2024-07-30_pennsylvania-resident-admits-defrauding-allied-world-insuran.txt": {
+  "vertices": [
+   {
+    "id": "1:James Keating",
+    "label": "person",
+    "properties": {
+     "name": "James Keating",
+     "age": 52,
+     "occupation": "Assistant Vice President and surety bond claims handler"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Vanessa Roberts Avery",
+    "label": "person",
+    "properties": {
+     "name": "Vanessa Roberts Avery",
+     "role": "United States Attorney for the District of Connecticut"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:David E. Novick",
+    "label": "person",
+    "properties": {
+     "name": "David E. Novick",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Allied World Insurance Company",
+    "label": "organization",
+    "properties": {
+     "name": "Allied World Insurance Company",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:U.S. Fire Insurance Company",
+    "label": "organization",
+    "properties": {
+     "name": "U.S. Fire Insurance Company",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Crum and Forster",
+    "label": "organization",
+    "properties": {
+     "name": "Crum and Forster",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:American Construction & Industrial LLC",
+    "label": "organization",
+    "properties": {
+     "name": "American Construction & Industrial LLC",
+     "org_type": "shell company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Surety Risk Solutions",
+    "label": "organization",
+    "properties": {
+     "name": "Surety Risk Solutions"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Kodiak Asset Recovery",
+    "label": "organization",
+    "properties": {
+     "name": "Kodiak Asset Recovery"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "defrauded",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Allied World Insurance Company",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 1446491.95,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Allied World Insurance Company",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:U.S. Fire Insurance Company",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:American Construction & Industrial LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Surety Risk Solutions",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Kodiak Asset Recovery",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "1:David E. Novick",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 8.0
+ },
+ "05_2025-01-28_pennsylvania-resident-who-defrauded-allied-world-insurance-c.txt": {
+  "vertices": [
+   {
+    "id": "1:James Keating",
+    "label": "person",
+    "properties": {
+     "name": "James Keating",
+     "age": 52,
+     "occupation": "Assistant Vice President and surety bond claims handler"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Victor A. Bolden",
+    "label": "person",
+    "properties": {
+     "name": "Victor A. Bolden",
+     "role": "U.S. District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Marc H. Silverman",
+    "label": "person",
+    "properties": {
+     "name": "Marc H. Silverman",
+     "role": "Acting United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:David E. Novick",
+    "label": "person",
+    "properties": {
+     "name": "David E. Novick",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Allied World Insurance Company",
+    "label": "organization",
+    "properties": {
+     "name": "Allied World Insurance Company",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:American Construction & Industrial LLC",
+    "label": "organization",
+    "properties": {
+     "name": "American Construction & Industrial LLC",
+     "org_type": "shell company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Surety Risk Solutions",
+    "label": "organization",
+    "properties": {
+     "name": "Surety Risk Solutions"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Kodiak Asset Recovery",
+    "label": "organization",
+    "properties": {
+     "name": "Kodiak Asset Recovery"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:U.S. Fire Insurance Company",
+    "label": "organization",
+    "properties": {
+     "name": "U.S. Fire Insurance Company",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Crum and Forster",
+    "label": "organization",
+    "properties": {
+     "name": "Crum and Forster",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "defrauded",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Allied World Insurance Company",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 1446491.95,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:American Construction & Industrial LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Surety Risk Solutions",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Kodiak Asset Recovery",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Allied World Insurance Company",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:U.S. Fire Insurance Company",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "1:Victor A. Bolden",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 20,
+     "restitution_amount": 1226603.97
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:James Keating",
+    "outVLabel": "person",
+    "inV": "1:David E. Novick",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 8.9
+ },
+ "06_2025-06-03_former-police-officers-plead-guilty-federal-charges-connecti.txt": {
+  "vertices": [
+   {
+    "id": "1:Michael Anthony Owen, Jr.",
+    "label": "person",
+    "properties": {
+     "name": "Michael Anthony Owen, Jr.",
+     "age": 36,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jaron Earl Taylor",
+    "label": "person",
+    "properties": {
+     "name": "Jaron Earl Taylor",
+     "age": 31,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Candace Tyler",
+    "label": "person",
+    "properties": {
+     "name": "Candace Tyler",
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Conrad D'Haiti",
+    "label": "person",
+    "properties": {
+     "name": "Conrad D'Haiti",
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Davion Percy",
+    "label": "person",
+    "properties": {
+     "name": "Davion Percy",
+     "occupation": "police chief"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kelly O. Hayes",
+    "label": "person",
+    "properties": {
+     "name": "Kelly O. Hayes",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Amanda M. Koldjeski",
+    "label": "person",
+    "properties": {
+     "name": "Amanda M. Koldjeski",
+     "role": "Acting Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Malik Aziz",
+    "label": "person",
+    "properties": {
+     "name": "Malik Aziz",
+     "role": "Chief"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Joseph Baldwin",
+    "label": "person",
+    "properties": {
+     "name": "Joseph Baldwin",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:LaShanta Harris",
+    "label": "person",
+    "properties": {
+     "name": "LaShanta Harris",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAA",
+    "label": "organization",
+    "properties": {
+     "name": "USAA",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Liberty Mutual Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "Liberty Mutual Insurance",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:GEICO",
+    "label": "organization",
+    "properties": {
+     "name": "GEICO",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:FBI",
+    "label": "organization",
+    "properties": {
+     "name": "FBI",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Prince George's County Police Department",
+    "label": "organization",
+    "properties": {
+     "name": "Prince George's County Police Department",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Anne Arundel County Police Department",
+    "label": "organization",
+    "properties": {
+     "name": "Anne Arundel County Police Department",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "defrauded",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "2:USAA",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 38670.0,
+     "charge": "conspiracy to commit wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Conrad D'Haiti",
+    "outVLabel": "person",
+    "inV": "2:Liberty Mutual Insurance",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 17585.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Jaron Earl Taylor",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Conrad D'Haiti",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Davion Percy",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Candace Tyler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Conrad D'Haiti",
+    "outVLabel": "person",
+    "inV": "1:Davion Percy",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "2:Prince George's County Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "2:Anne Arundel County Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Amanda M. Koldjeski",
+    "outVLabel": "person",
+    "inV": "2:FBI",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Malik Aziz",
+    "outVLabel": "person",
+    "inV": "2:Prince George's County Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "2:FBI",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "2:FBI",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Joseph Baldwin",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Joseph Baldwin",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:LaShanta Harris",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:LaShanta Harris",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 14.3
+ },
+ "06_2026-07-10_former-anne-arundel-county-police-officer-sentenced-connecti.txt": {
+  "vertices": [
+   {
+    "id": "1:Jaron Earl Taylor",
+    "label": "person",
+    "properties": {
+     "name": "Jaron Earl Taylor",
+     "age": 32,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Michael Anthony Owen, Jr.",
+    "label": "person",
+    "properties": {
+     "name": "Michael Anthony Owen, Jr.",
+     "age": 38,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Candace Tyler",
+    "label": "person",
+    "properties": {
+     "name": "Candace Tyler",
+     "age": 39,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Conrad D'Haiti",
+    "label": "person",
+    "properties": {
+     "name": "Conrad D'Haiti",
+     "age": 56,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Davion Percy",
+    "label": "person",
+    "properties": {
+     "name": "Davion Percy",
+     "age": 41,
+     "occupation": "police chief"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Lydia Griggsby",
+    "label": "person",
+    "properties": {
+     "name": "Lydia Griggsby",
+     "role": "Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kelly O. Hayes",
+    "label": "person",
+    "properties": {
+     "name": "Kelly O. Hayes",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jimmy Paul",
+    "label": "person",
+    "properties": {
+     "name": "Jimmy Paul",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:George Nader",
+    "label": "person",
+    "properties": {
+     "name": "George Nader",
+     "role": "Chief"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Joseph Baldwin",
+    "label": "person",
+    "properties": {
+     "name": "Joseph Baldwin",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Adeyemi Adenrele",
+    "label": "person",
+    "properties": {
+     "name": "Adeyemi Adenrele",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Caroline Schechinger",
+    "label": "person",
+    "properties": {
+     "name": "Caroline Schechinger",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:United States Automobile Association",
+    "label": "organization",
+    "properties": {
+     "name": "United States Automobile Association",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Anne Arundel County Police Department",
+    "label": "organization",
+    "properties": {
+     "name": "Anne Arundel County Police Department",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Prince George's County Police Department",
+    "label": "organization",
+    "properties": {
+     "name": "Prince George's County Police Department",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:FBI",
+    "label": "organization",
+    "properties": {
+     "name": "FBI",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Liberty Mutual Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "Liberty Mutual Insurance",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:GEICO",
+    "label": "organization",
+    "properties": {
+     "name": "GEICO",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "sentenced_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Lydia Griggsby",
+    "inVLabel": "person",
+    "properties": {
+     "restitution_amount": 38670.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "2:United States Automobile Association",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 38670.0,
+     "charge": "conspiracy to commit wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "2:Anne Arundel County Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "2:Prince George's County Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Conrad D'Haiti",
+    "outVLabel": "person",
+    "inV": "2:Liberty Mutual Insurance",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 17585.0,
+     "charge": "conspiracy to commit mail and wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "2:FBI",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "2:Prince George's County Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Joseph Baldwin",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Adeyemi Adenrele",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Caroline Schechinger",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Michael Anthony Owen, Jr.",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Candace Tyler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Conrad D'Haiti",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Davion Percy",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Conrad D'Haiti",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Davion Percy",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 14.6
+ },
+ "06_2026-08-19_former-prince-georges-county-police-officer-sentenced-connec.txt": {
+  "vertices": [
+   {
+    "id": "1:Michael Anthony Owen, Jr.",
+    "label": "person",
+    "properties": {
+     "name": "Michael Anthony Owen, Jr.",
+     "age": 37,
+     "occupation": "former Prince George's County police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jaron Earl Taylor",
+    "label": "person",
+    "properties": {
+     "name": "Jaron Earl Taylor",
+     "age": 32,
+     "occupation": "former Anne Arundel County Police Department officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Candace Tyler",
+    "label": "person",
+    "properties": {
+     "name": "Candace Tyler",
+     "age": 39,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Conrad D'Haiti",
+    "label": "person",
+    "properties": {
+     "name": "Conrad D'Haiti",
+     "age": 56,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Davion Percy",
+    "label": "person",
+    "properties": {
+     "name": "Davion Percy",
+     "age": 40,
+     "occupation": "police chief"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Lydia Griggsby",
+    "label": "person",
+    "properties": {
+     "name": "Lydia Griggsby",
+     "role": "Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kelly O. Hayes",
+    "label": "person",
+    "properties": {
+     "name": "Kelly O. Hayes",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jimmy Paul",
+    "label": "person",
+    "properties": {
+     "name": "Jimmy Paul",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:George Nader",
+    "label": "person",
+    "properties": {
+     "name": "George Nader",
+     "role": "Chief"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Joseph Baldwin",
+    "label": "person",
+    "properties": {
+     "name": "Joseph Baldwin",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:FBI Baltimore Field Office",
+    "label": "organization",
+    "properties": {
+     "name": "FBI Baltimore Field Office",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Prince George's County Police Department",
+    "label": "organization",
+    "properties": {
+     "name": "Prince George's County Police Department",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAA",
+    "label": "organization",
+    "properties": {
+     "name": "USAA",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Liberty Mutual Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "Liberty Mutual Insurance",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:GEICO",
+    "label": "organization",
+    "properties": {
+     "name": "GEICO",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "sentenced_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Lydia Griggsby",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 6,
+     "restitution_amount": 17585.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Lydia Griggsby",
+    "inVLabel": "person",
+    "properties": {
+     "restitution_amount": 38670.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Jaron Earl Taylor",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Candace Tyler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Conrad D'Haiti",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Davion Percy",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Candace Tyler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Conrad D'Haiti",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "1:Davion Percy",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Jaron Earl Taylor",
+    "outVLabel": "person",
+    "inV": "2:USAA",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 38670.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:Conrad D'Haiti",
+    "outVLabel": "person",
+    "inV": "2:Liberty Mutual Insurance",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 17585.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "2:FBI Baltimore Field Office",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "2:Prince George's County Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Jimmy Paul",
+    "outVLabel": "person",
+    "inV": "2:FBI Baltimore Field Office",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:George Nader",
+    "outVLabel": "person",
+    "inV": "2:Prince George's County Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Michael Anthony Owen, Jr.",
+    "outVLabel": "person",
+    "inV": "1:Joseph Baldwin",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 14.4
+ },
+ "07_2024-07-01_former-new-orleans-police-officer-charged-insurance-fraud-an.txt": {
+  "vertices": [
+   {
+    "id": "1:Christian Conrad Claus",
+    "label": "person",
+    "properties": {
+     "name": "Christian Conrad Claus",
+     "age": 55,
+     "occupation": "police officer",
+     "role": "defendant"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Fouad K. Zeton",
+    "label": "person",
+    "properties": {
+     "name": "Fouad K. Zeton",
+     "role": "co-conspirator"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Michael Jon Schofield",
+    "label": "person",
+    "properties": {
+     "name": "Michael Jon Schofield",
+     "occupation": "art appraiser",
+     "role": "co-conspirator"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Chandra Menon",
+    "label": "person",
+    "properties": {
+     "name": "Chandra Menon",
+     "occupation": "Assistant U.S. Attorney",
+     "role": "prosecutor"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:FBI",
+    "label": "organization",
+    "properties": {
+     "name": "FBI",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:NOPD",
+    "label": "organization",
+    "properties": {
+     "name": "NOPD",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAO - Louisiana, Eastern",
+    "label": "organization",
+    "properties": {
+     "name": "USAO - Louisiana, Eastern",
+     "org_type": "government"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "conspired_with",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "1:Fouad K. Zeton",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "1:Michael Jon Schofield",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "2:NOPD",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "2:FBI",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "1:Chandra Menon",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 6.4
+ },
+ "07_2026-06-26_federal-trial-jury-convicts-former-new-orleans-police-office.txt": {
+  "vertices": [
+   {
+    "id": "1:Christian Conrad Claus",
+    "label": "person",
+    "properties": {
+     "name": "Christian Conrad Claus",
+     "age": 57,
+     "occupation": "police officer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Fouad K. Zeton",
+    "label": "person",
+    "properties": {
+     "name": "Fouad K. Zeton",
+     "occupation": "homeowner"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Michael Jon Schofield",
+    "label": "person",
+    "properties": {
+     "name": "Michael Jon Schofield",
+     "occupation": "art appraiser"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Michael M. Simpson",
+    "label": "person",
+    "properties": {
+     "name": "Michael M. Simpson",
+     "role": "First Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Charles Koger",
+    "label": "person",
+    "properties": {
+     "name": "Charles Koger",
+     "role": "Acting Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Wendy B. Vitter",
+    "label": "person",
+    "properties": {
+     "name": "Wendy B. Vitter",
+     "role": "Chief United States District Court Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Chandra Menon",
+    "label": "person",
+    "properties": {
+     "name": "Chandra Menon",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Tiwana Wright",
+    "label": "person",
+    "properties": {
+     "name": "Tiwana Wright",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAO - Louisiana, Eastern",
+    "label": "organization",
+    "properties": {
+     "name": "USAO - Louisiana, Eastern",
+     "org_type": "government"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:New Orleans Police Department",
+    "label": "organization",
+    "properties": {
+     "name": "New Orleans Police Department",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "conspired_with",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "1:Fouad K. Zeton",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "1:Michael Jon Schofield",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "2:New Orleans Police Department",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "1:Chandra Menon",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Christian Conrad Claus",
+    "outVLabel": "person",
+    "inV": "1:Tiwana Wright",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 8.3
+ },
+ "08_2025-11-26_kansas-farmer-indicted-insurance-fraud.txt": {
+  "vertices": [
+   {
+    "id": "1:David L. Mongeau",
+    "label": "person",
+    "properties": {
+     "name": "David L. Mongeau",
+     "age": 54,
+     "occupation": "farmer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jason Hart",
+    "label": "person",
+    "properties": {
+     "name": "Jason Hart",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Edgar Cuellar-Ortega",
+    "label": "person",
+    "properties": {
+     "name": "Edgar Cuellar-Ortega",
+     "age": 45
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Molly Gordon",
+    "label": "person",
+    "properties": {
+     "name": "Molly Gordon",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Miguel Modesto-Cesario",
+    "label": "person",
+    "properties": {
+     "name": "Miguel Modesto-Cesario",
+     "age": 26
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ola Odeyemi",
+    "label": "person",
+    "properties": {
+     "name": "Ola Odeyemi",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Lazaro Rodriguez-Hernandez",
+    "label": "person",
+    "properties": {
+     "name": "Lazaro Rodriguez-Hernandez",
+     "age": 35
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jose Guillermo Uribe Perez",
+    "label": "person",
+    "properties": {
+     "name": "Jose Guillermo Uribe Perez",
+     "age": 38
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Larry Fadler",
+    "label": "person",
+    "properties": {
+     "name": "Larry Fadler",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Enrique Villareal-Varela",
+    "label": "person",
+    "properties": {
+     "name": "Enrique Villareal-Varela",
+     "age": 53
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:U.S. Department of Agriculture",
+    "label": "organization",
+    "properties": {
+     "name": "U.S. Department of Agriculture",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Homeland Security Investigations",
+    "label": "organization",
+    "properties": {
+     "name": "Homeland Security Investigations",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "prosecuted_by",
+    "outV": "1:David L. Mongeau",
+    "outVLabel": "person",
+    "inV": "1:Jason Hart",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:David L. Mongeau",
+    "outVLabel": "person",
+    "inV": "2:U.S. Department of Agriculture",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Edgar Cuellar-Ortega",
+    "outVLabel": "person",
+    "inV": "1:Molly Gordon",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Edgar Cuellar-Ortega",
+    "outVLabel": "person",
+    "inV": "2:Homeland Security Investigations",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Miguel Modesto-Cesario",
+    "outVLabel": "person",
+    "inV": "1:Ola Odeyemi",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Miguel Modesto-Cesario",
+    "outVLabel": "person",
+    "inV": "2:Homeland Security Investigations",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lazaro Rodriguez-Hernandez",
+    "outVLabel": "person",
+    "inV": "1:Molly Gordon",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Lazaro Rodriguez-Hernandez",
+    "outVLabel": "person",
+    "inV": "2:Homeland Security Investigations",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jose Guillermo Uribe Perez",
+    "outVLabel": "person",
+    "inV": "1:Larry Fadler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Jose Guillermo Uribe Perez",
+    "outVLabel": "person",
+    "inV": "2:Homeland Security Investigations",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Enrique Villareal-Varela",
+    "outVLabel": "person",
+    "inV": "1:Larry Fadler",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Enrique Villareal-Varela",
+    "outVLabel": "person",
+    "inV": "2:Homeland Security Investigations",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 10.1
+ },
+ "08_2026-04-03_kansas-farmer-pleads-guilty-crop-insurance-fraud-0.txt": {
+  "vertices": [
+   {
+    "id": "1:David L. Mongeau",
+    "label": "person",
+    "properties": {
+     "name": "David L. Mongeau",
+     "age": 54,
+     "occupation": "farmer"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ryan A. Kriegshauser",
+    "label": "person",
+    "properties": {
+     "name": "Ryan A. Kriegshauser",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:John Walk",
+    "label": "person",
+    "properties": {
+     "name": "John Walk",
+     "role": "Inspector General"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Mongeau Enterprises",
+    "label": "organization",
+    "properties": {
+     "name": "Mongeau Enterprises",
+     "org_type": "farming operation"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:U.S. Department of Agriculture",
+    "label": "organization",
+    "properties": {
+     "name": "U.S. Department of Agriculture",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Crop Insurance Program",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Crop Insurance Program",
+     "org_type": "government program"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:First National Bank of Syracuse",
+    "label": "organization",
+    "properties": {
+     "name": "First National Bank of Syracuse",
+     "org_type": "bank"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:U.S. Department of Agriculture – Office of Inspector General",
+    "label": "organization",
+    "properties": {
+     "name": "U.S. Department of Agriculture – Office of Inspector General",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "owns",
+    "outV": "1:David L. Mongeau",
+    "outVLabel": "person",
+    "inV": "2:Mongeau Enterprises",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:David L. Mongeau",
+    "outVLabel": "person",
+    "inV": "2:Federal Crop Insurance Program",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 241645.0,
+     "charge": "false statements related to crop insurance"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "defrauded",
+    "outV": "1:David L. Mongeau",
+    "outVLabel": "person",
+    "inV": "2:First National Bank of Syracuse",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 300000.0,
+     "charge": "bank fraud/attempted bank fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:David L. Mongeau",
+    "outVLabel": "person",
+    "inV": "2:U.S. Department of Agriculture – Office of Inspector General",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 7.4
+ },
+ "09_2024-06-20_insurance-agent-admits-fabricating-applications-and-payment.txt": {
+  "vertices": [
+   {
+    "id": "1:Bruno Francis Ragusa",
+    "label": "person",
+    "properties": {
+     "name": "Bruno Francis Ragusa",
+     "age": 53,
+     "occupation": "insurance broker"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Zachary A. Cunha",
+    "label": "person",
+    "properties": {
+     "name": "Zachary A. Cunha",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Milind M. Shah",
+    "label": "person",
+    "properties": {
+     "name": "Milind M. Shah",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:FBI",
+    "label": "organization",
+    "properties": {
+     "name": "FBI",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Department of Business Regulation for the State of Rhode Island",
+    "label": "organization",
+    "properties": {
+     "name": "Department of Business Regulation for the State of Rhode Island",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:United States Attorney's Office for the District of Massachusetts",
+    "label": "organization",
+    "properties": {
+     "name": "United States Attorney's Office for the District of Massachusetts",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:North Attleboro Police Department",
+    "label": "organization",
+    "properties": {
+     "name": "North Attleboro Police Department",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "investigated_by",
+    "outV": "1:Bruno Francis Ragusa",
+    "outVLabel": "person",
+    "inV": "2:FBI",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Bruno Francis Ragusa",
+    "outVLabel": "person",
+    "inV": "1:Milind M. Shah",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 5.3
+ },
+ "09_2024-10-08_insurance-broker-sentenced-federal-prison-fabricating-applic.txt": {
+  "vertices": [
+   {
+    "id": "1:Bruno Francis Ragusa",
+    "label": "person",
+    "properties": {
+     "name": "Bruno Francis Ragusa",
+     "age": 53,
+     "occupation": "insurance broker"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Zachary A. Cunha",
+    "label": "person",
+    "properties": {
+     "name": "Zachary A. Cunha",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:William E. Smith",
+    "label": "person",
+    "properties": {
+     "name": "William E. Smith",
+     "role": "U.S. District Court Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Milind M. Shah",
+    "label": "person",
+    "properties": {
+     "name": "Milind M. Shah",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation (FBI)",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation (FBI)",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAO - Rhode Island",
+    "label": "organization",
+    "properties": {
+     "name": "USAO - Rhode Island",
+     "org_type": "government"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:North Attleboro Police Department",
+    "label": "organization",
+    "properties": {
+     "name": "North Attleboro Police Department",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Rhode Island Department of Business Regulation",
+    "label": "organization",
+    "properties": {
+     "name": "Rhode Island Department of Business Regulation",
+     "org_type": "government"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "sentenced_by",
+    "outV": "1:Bruno Francis Ragusa",
+    "outVLabel": "person",
+    "inV": "1:William E. Smith",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 18,
+     "restitution_amount": 70379.47
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Bruno Francis Ragusa",
+    "outVLabel": "person",
+    "inV": "1:Milind M. Shah",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Bruno Francis Ragusa",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation (FBI)",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 7.2
+ },
+ "10_2026-09-02_former-schererville-insurance-agent-sentenced-70-months-pris.txt": {
+  "vertices": [
+   {
+    "id": "1:Thomas J. Lemmen",
+    "label": "person",
+    "properties": {
+     "name": "Thomas J. Lemmen",
+     "age": 51,
+     "occupation": "insurance agent"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Gretchen S. Lund",
+    "label": "person",
+    "properties": {
+     "name": "Gretchen S. Lund",
+     "role": "United States District Court Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Adam L. Mildred",
+    "label": "person",
+    "properties": {
+     "name": "Adam L. Mildred",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Zachary D. Heater",
+    "label": "person",
+    "properties": {
+     "name": "Zachary D. Heater",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Timothy J. O'Malley",
+    "label": "person",
+    "properties": {
+     "name": "Timothy J. O'Malley",
+     "role": "FBI Indianapolis Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Indiana Department of Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "Indiana Department of Insurance",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:United States Bankruptcy Trustee for Region 10",
+    "label": "organization",
+    "properties": {
+     "name": "United States Bankruptcy Trustee for Region 10",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "sentenced_by",
+    "outV": "1:Thomas J. Lemmen",
+    "outVLabel": "person",
+    "inV": "1:Gretchen S. Lund",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 70,
+     "restitution_amount": 1601505.27
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Thomas J. Lemmen",
+    "outVLabel": "person",
+    "inV": "1:Zachary D. Heater",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Thomas J. Lemmen",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 6.9
+ },
+ "11_2025-07-07_former-northridge-insurance-agent-sentenced-more-4-years-pri.txt": {
+  "vertices": [
+   {
+    "id": "1:Tonja Van Roy",
+    "label": "person",
+    "properties": {
+     "name": "Tonja Van Roy",
+     "age": 59,
+     "occupation": "insurance agent"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Stephen V. Wilson",
+    "label": "person",
+    "properties": {
+     "name": "Stephen V. Wilson",
+     "role": "United States District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Andrew Brown",
+    "label": "person",
+    "properties": {
+     "name": "Andrew Brown",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:AFCO Credit Corp.",
+    "label": "organization",
+    "properties": {
+     "name": "AFCO Credit Corp.",
+     "org_type": "insurance premium finance"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Pegasus Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "Pegasus Insurance",
+     "org_type": "insurance agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Homeland Security Investigations",
+    "label": "organization",
+    "properties": {
+     "name": "Homeland Security Investigations",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:California Department of Insurance",
+    "label": "organization",
+    "properties": {
+     "name": "California Department of Insurance",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "defrauded",
+    "outV": "1:Tonja Van Roy",
+    "outVLabel": "person",
+    "inV": "2:AFCO Credit Corp.",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 3700000.0,
+     "charge": "wire fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Tonja Van Roy",
+    "outVLabel": "person",
+    "inV": "2:Pegasus Insurance",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Tonja Van Roy",
+    "outVLabel": "person",
+    "inV": "1:Stephen V. Wilson",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 50,
+     "restitution_amount": 1880237.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Tonja Van Roy",
+    "outVLabel": "person",
+    "inV": "1:Andrew Brown",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Tonja Van Roy",
+    "outVLabel": "person",
+    "inV": "2:Homeland Security Investigations",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Tonja Van Roy",
+    "outVLabel": "person",
+    "inV": "2:California Department of Insurance",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 10.4
+ },
+ "12_2024-08-08_san-francisco-tow-company-operator-charged-insurance-fraud-a.txt": {
+  "vertices": [
+   {
+    "id": "1:Jose Vicente Badillo",
+    "label": "person",
+    "properties": {
+     "name": "Jose Vicente Badillo",
+     "age": 28
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jessica Elizabeth Najarro",
+    "label": "person",
+    "properties": {
+     "name": "Jessica Elizabeth Najarro",
+     "age": 30
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ismail J. Ramsey",
+    "label": "person",
+    "properties": {
+     "name": "Ismail J. Ramsey",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Robert K. Tripp",
+    "label": "person",
+    "properties": {
+     "name": "Robert K. Tripp",
+     "role": "FBI Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Michael Mosley",
+    "label": "person",
+    "properties": {
+     "name": "Michael Mosley",
+     "role": "IRS CI Acting Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Rita F. Lin",
+    "label": "person",
+    "properties": {
+     "name": "Rita F. Lin",
+     "role": "United States District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Kyle F. Waldinger",
+    "label": "person",
+    "properties": {
+     "name": "Kyle F. Waldinger",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Galen A. Phillips",
+    "label": "person",
+    "properties": {
+     "name": "Galen A. Phillips",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Jose's Towing, LLC",
+    "label": "organization",
+    "properties": {
+     "name": "Jose's Towing, LLC",
+     "org_type": "towing company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Auto Towing, LLC",
+    "label": "organization",
+    "properties": {
+     "name": "Auto Towing, LLC",
+     "org_type": "towing company"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:FBI",
+    "label": "organization",
+    "properties": {
+     "name": "FBI",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:IRS Criminal Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "IRS Criminal Investigation",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Wells Fargo Bank",
+    "label": "organization",
+    "properties": {
+     "name": "Wells Fargo Bank",
+     "org_type": "bank"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "conspired_with",
+    "outV": "1:Jose Vicente Badillo",
+    "outVLabel": "person",
+    "inV": "1:Jessica Elizabeth Najarro",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Jose Vicente Badillo",
+    "outVLabel": "person",
+    "inV": "2:Jose's Towing, LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Jose Vicente Badillo",
+    "outVLabel": "person",
+    "inV": "2:Auto Towing, LLC",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Jose Vicente Badillo",
+    "outVLabel": "person",
+    "inV": "2:FBI",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Jose Vicente Badillo",
+    "outVLabel": "person",
+    "inV": "2:IRS Criminal Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Jessica Elizabeth Najarro",
+    "outVLabel": "person",
+    "inV": "2:FBI",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Jessica Elizabeth Najarro",
+    "outVLabel": "person",
+    "inV": "2:IRS Criminal Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jose Vicente Badillo",
+    "outVLabel": "person",
+    "inV": "1:Kyle F. Waldinger",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jose Vicente Badillo",
+    "outVLabel": "person",
+    "inV": "1:Galen A. Phillips",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jessica Elizabeth Najarro",
+    "outVLabel": "person",
+    "inV": "1:Kyle F. Waldinger",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Jessica Elizabeth Najarro",
+    "outVLabel": "person",
+    "inV": "1:Galen A. Phillips",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 11.8
+ },
+ "13_2026-02-02_ohio-couple-sentenced-prison-arson-profit-scheme-fraudulentl.txt": {
+  "vertices": [
+   {
+    "id": "1:Lonnie White",
+    "label": "person",
+    "properties": {
+     "name": "Lonnie White",
+     "age": 48
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Lisa Ogletree",
+    "label": "person",
+    "properties": {
+     "name": "Lisa Ogletree",
+     "age": 48
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Sara Lioi",
+    "label": "person",
+    "properties": {
+     "name": "Sara Lioi",
+     "role": "Chief U.S. District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:David M. Toepfer",
+    "label": "person",
+    "properties": {
+     "name": "David M. Toepfer",
+     "role": "United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Adam J. Joines",
+    "label": "person",
+    "properties": {
+     "name": "Adam J. Joines",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Brian M. McDonough",
+    "label": "person",
+    "properties": {
+     "name": "Brian M. McDonough",
+     "role": "Assistant United States Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    "label": "organization",
+    "properties": {
+     "name": "Bureau of Alcohol, Tobacco, Firearms and Explosives",
+     "org_type": "federal agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAO - Northern District of Ohio",
+    "label": "organization",
+    "properties": {
+     "name": "USAO - Northern District of Ohio",
+     "org_type": "government"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "spouse_of",
+    "outV": "1:Lonnie White",
+    "outVLabel": "person",
+    "inV": "1:Lisa Ogletree",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Lonnie White",
+    "outVLabel": "person",
+    "inV": "1:Lisa Ogletree",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Lonnie White",
+    "outVLabel": "person",
+    "inV": "1:Sara Lioi",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 53,
+     "restitution_amount": 2375861.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Lisa Ogletree",
+    "outVLabel": "person",
+    "inV": "1:Sara Lioi",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Lonnie White",
+    "outVLabel": "person",
+    "inV": "2:Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Lisa Ogletree",
+    "outVLabel": "person",
+    "inV": "2:Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lonnie White",
+    "outVLabel": "person",
+    "inV": "1:Adam J. Joines",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lonnie White",
+    "outVLabel": "person",
+    "inV": "1:Brian M. McDonough",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lisa Ogletree",
+    "outVLabel": "person",
+    "inV": "1:Adam J. Joines",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lisa Ogletree",
+    "outVLabel": "person",
+    "inV": "1:Brian M. McDonough",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Adam J. Joines",
+    "outVLabel": "person",
+    "inV": "2:USAO - Northern District of Ohio",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "employed_by",
+    "outV": "1:Brian M. McDonough",
+    "outVLabel": "person",
+    "inV": "2:USAO - Northern District of Ohio",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 10.2
+ },
+ "14_2024-11-20_florida-insurance-broker-pleads-guilty-defrauding-peach-stat.txt": {
+  "vertices": [
+   {
+    "id": "1:Heleonel Gonzalez",
+    "label": "person",
+    "properties": {
+     "name": "Heleonel Gonzalez",
+     "age": 48,
+     "occupation": "insurance broker"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ryan K. Buchanan",
+    "label": "person",
+    "properties": {
+     "name": "Ryan K. Buchanan",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Sean Burke",
+    "label": "person",
+    "properties": {
+     "name": "Sean Burke",
+     "role": "Acting Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Steve C. Jones",
+    "label": "person",
+    "properties": {
+     "name": "Steve C. Jones",
+     "role": "U.S. District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:John Russell Phillips",
+    "label": "person",
+    "properties": {
+     "name": "John Russell Phillips",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Peach State Federal Credit Union",
+    "label": "organization",
+    "properties": {
+     "name": "Peach State Federal Credit Union",
+     "org_type": "credit union"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Sharp Insurance Agency, Inc.",
+    "label": "organization",
+    "properties": {
+     "name": "Sharp Insurance Agency, Inc.",
+     "org_type": "insurance agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Federal Bureau of Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "Federal Bureau of Investigation",
+     "org_type": "law enforcement"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:P1 Finance",
+    "label": "organization",
+    "properties": {
+     "name": "P1 Finance",
+     "org_type": "financial services"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Citizens Property Insurance Corporation",
+    "label": "organization",
+    "properties": {
+     "name": "Citizens Property Insurance Corporation",
+     "org_type": "insurance company"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "defrauded",
+    "outV": "1:Heleonel Gonzalez",
+    "outVLabel": "person",
+    "inV": "2:Peach State Federal Credit Union",
+    "inVLabel": "organization",
+    "properties": {
+     "loss_amount": 6000000.0,
+     "charge": "bank fraud"
+    },
+    "type": "edge"
+   },
+   {
+    "label": "owns",
+    "outV": "1:Heleonel Gonzalez",
+    "outVLabel": "person",
+    "inV": "2:Sharp Insurance Agency, Inc.",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Heleonel Gonzalez",
+    "outVLabel": "person",
+    "inV": "2:Federal Bureau of Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Heleonel Gonzalez",
+    "outVLabel": "person",
+    "inV": "1:John Russell Phillips",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 7.0
+ },
+ "15_2026-07-29_fifth-defendant-sentenced-bank-fraud-and-tax-offenses-arisin.txt": {
+  "vertices": [
+   {
+    "id": "1:Lisette Patricio",
+    "label": "person",
+    "properties": {
+     "name": "Lisette Patricio",
+     "age": 64
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Rodolfo A. Ruiz II",
+    "label": "person",
+    "properties": {
+     "name": "Rodolfo A. Ruiz II",
+     "role": "U.S. District Judge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jason A. Reding Quiñones",
+    "label": "person",
+    "properties": {
+     "name": "Jason A. Reding Quiñones",
+     "role": "U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Ron Loecker",
+    "label": "person",
+    "properties": {
+     "name": "Ron Loecker",
+     "role": "Special Agent in Charge"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Arturo Morales",
+    "label": "person",
+    "properties": {
+     "name": "Arturo Morales"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Darely Carballeira",
+    "label": "person",
+    "properties": {
+     "name": "Darely Carballeira"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Antonio Carballeira",
+    "label": "person",
+    "properties": {
+     "name": "Antonio Carballeira"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Yarelis Felipe",
+    "label": "person",
+    "properties": {
+     "name": "Yarelis Felipe",
+     "occupation": "insurance agent"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Jon Juenger",
+    "label": "person",
+    "properties": {
+     "name": "Jon Juenger",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "1:Sean Cronin",
+    "label": "person",
+    "properties": {
+     "name": "Sean Cronin",
+     "role": "Assistant U.S. Attorney"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:IRS",
+    "label": "organization",
+    "properties": {
+     "name": "IRS",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:IRS Criminal Investigation",
+    "label": "organization",
+    "properties": {
+     "name": "IRS Criminal Investigation",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:Florida Department of Financial Services",
+    "label": "organization",
+    "properties": {
+     "name": "Florida Department of Financial Services",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   },
+   {
+    "id": "2:USAO - Florida, Southern",
+    "label": "organization",
+    "properties": {
+     "name": "USAO - Florida, Southern",
+     "org_type": "government agency"
+    },
+    "type": "vertex"
+   }
+  ],
+  "edges": [
+   {
+    "label": "sentenced_by",
+    "outV": "1:Lisette Patricio",
+    "outVLabel": "person",
+    "inV": "1:Rodolfo A. Ruiz II",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 45,
+     "restitution_amount": 593033.0
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Darely Carballeira",
+    "outVLabel": "person",
+    "inV": "1:Rodolfo A. Ruiz II",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 51
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Antonio Carballeira",
+    "outVLabel": "person",
+    "inV": "1:Rodolfo A. Ruiz II",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 6
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Arturo Morales",
+    "outVLabel": "person",
+    "inV": "1:Rodolfo A. Ruiz II",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 57
+    },
+    "type": "edge"
+   },
+   {
+    "label": "sentenced_by",
+    "outV": "1:Yarelis Felipe",
+    "outVLabel": "person",
+    "inV": "1:Rodolfo A. Ruiz II",
+    "inVLabel": "person",
+    "properties": {
+     "sentence_months": 10
+    },
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lisette Patricio",
+    "outVLabel": "person",
+    "inV": "1:Jon Juenger",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "prosecuted_by",
+    "outV": "1:Lisette Patricio",
+    "outVLabel": "person",
+    "inV": "1:Sean Cronin",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Lisette Patricio",
+    "outVLabel": "person",
+    "inV": "2:IRS Criminal Investigation",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "investigated_by",
+    "outV": "1:Lisette Patricio",
+    "outVLabel": "person",
+    "inV": "2:Florida Department of Financial Services",
+    "inVLabel": "organization",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Lisette Patricio",
+    "outVLabel": "person",
+    "inV": "1:Arturo Morales",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Lisette Patricio",
+    "outVLabel": "person",
+    "inV": "1:Darely Carballeira",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Lisette Patricio",
+    "outVLabel": "person",
+    "inV": "1:Yarelis Felipe",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   },
+   {
+    "label": "conspired_with",
+    "outV": "1:Arturo Morales",
+    "outVLabel": "person",
+    "inV": "1:Darely Carballeira",
+    "inVLabel": "person",
+    "properties": {},
+    "type": "edge"
+   }
+  ],
+  "dropped": 0,
+  "secs": 12.9
+ }
+}

@@ -1,0 +1,364 @@
+[
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 1,
+  "section": "One hop",
+  "questions": [
+   "Who were Britany Brown's co-defendants?"
+  ],
+  "expected": "Thomas Lee, Andrew Hooper, Clarence Semmon, Patricia Kearse, Shabazz Rouzard, John Gerard Ebert, Joseph Graves-Carmichael",
+  "answer": "Britany Brown had 7 co-defendants in total.\n\n- Thomas Lee\n- Andrew Hooper\n- Clarence Semmon\n- Patricia Kearse\n- Shabazz Rouzard\n- John Gerard Ebert\n- Joseph Graves-Carmichael",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Britany Brown').both('co_defendant_with').dedup().values('name')",
+  "secs": 8.4
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 2,
+  "section": "One hop",
+  "questions": [
+   "Who were Raymond Wade's co-defendants?"
+  ],
+  "expected": "Dwayne Reddon, Ryan Small, Wayne Bessant (Small and Bessant are charged in the same conspiracy; their charges are pending)",
+  "answer": "Raymond Wade had 3 co-defendants in total: Ryan Small, Dwayne Reddon, and Wayne Bessant.\n\n- Ryan Small\n- Dwayne Reddon\n- Wayne Bessant",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Raymond Wade').both('co_defendant_with').dedup().values('name')",
+  "secs": 5.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 3,
+  "section": "One hop",
+  "questions": [
+   "Which defendants did Judge Michael A. Shipp preside over?"
+  ],
+  "expected": "Thomas Lee, Raymond Wade, Andrew Hooper, Britany Brown, Dwayne Reddon, Clarence Semmon, Patricia Kearse, Shabazz Rouzard, John Gerard Ebert, Joseph Graves-Carmichael",
+  "answer": "Judge Michael A. Shipp presided over 10 defendants in total:\n\n- Thomas Lee\n- Raymond Wade\n- Andrew Hooper\n- Britany Brown\n- Dwayne Reddon\n- Clarence Semmon\n- Patricia Kearse\n- Shabazz Rouzard\n- John Gerard Ebert\n- Joseph Graves-Carmichael",
+  "gremlin": "g.V().hasLabel('judge').has('name', 'Michael A. Shipp').out('presided_over').hasLabel('defendant').values('name')",
+  "secs": 5.2
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 4,
+  "section": "One hop",
+  "questions": [
+   "Which judges presided over Clarence Penny's case?"
+  ],
+  "expected": "Hope T. Cannon, M. Casey Rodgers",
+  "answer": "Two judges presided over Clarence Penny's case, according to the query result.\n\n- Hope T. Cannon\n- M. Casey Rodgers",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Clarence Penny').in('presided_over').hasLabel('judge').values('name')",
+  "secs": 6.4
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 5,
+  "section": "One hop",
+  "questions": [
+   "What was Clarence Penny charged with?"
+  ],
+  "expected": "Bank fraud, embezzlement of labor union funds, falsification of labor union reports",
+  "answer": "Clarence Penny was charged with 3 crimes in total.\n\n- Bank fraud\n- Embezzlement of labor union funds\n- Falsification of labor union reports",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Clarence Penny').out('charged_with').hasLabel('crime').values('name')",
+  "secs": 5.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 6,
+  "section": "One hop",
+  "questions": [
+   "Which agencies investigated Aaron T. Luneke?"
+  ],
+  "expected": "Federal Bureau of Investigation, plus the FHFA, FDIC and Federal Reserve Board Offices of Inspector General",
+  "answer": "Four agencies investigated Aaron T. Luneke:\n\n- Federal Bureau of Investigation\n- Federal Housing Finance Agency, Office of Inspector General\n- Federal Deposit Insurance Corporation, Office of Inspector General\n- Board of Governors of the Federal Reserve System, Office of Inspector General",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Aaron T. Luneke').in('investigated').hasLabel('agency').values('name')",
+  "secs": 5.7
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 7,
+  "section": "One hop",
+  "questions": [
+   "Who prosecuted Aaron T. Luneke?"
+  ],
+  "expected": "Sean Lynch, Sarah Hinrichs, Alejandro A. Abreu (U.S. Attorney Lesley A. Woods announced the sentence but is not named as prosecuting; an answer that also lists her is acceptable)",
+  "answer": "Aaron T. Luneke was prosecuted by 3 prosecutors in total, according to the result.\n\n- Sean Lynch\n- Sarah Hinrichs\n- Alejandro A. Abreu",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Aaron T. Luneke').in('prosecuted').hasLabel('prosecutor').values('name')",
+  "secs": 4.9
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 8,
+  "section": "One hop",
+  "questions": [
+   "Which defendants did Kristen Kearney prosecute?"
+  ],
+  "expected": "William Shaw, Keith Wainaina, Rosemary Parks, Phalentz Vernot, Victor Kolawole, Trinity Antonetty",
+  "answer": "Kristen Kearney prosecuted 6 defendants in total.\n\n- William Shaw\n- Keith Wainaina\n- Rosemary Parks\n- Phalentz Vernot\n- Victor Kolawole\n- Trinity Antonetty",
+  "gremlin": "g.V().hasLabel('prosecutor').has('name', 'Kristen Kearney').out('prosecuted').hasLabel('defendant').values('name')",
+  "secs": 5.5
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 9,
+  "section": "One hop",
+  "questions": [
+   "Who defrauded TD Bank?"
+  ],
+  "expected": "Cheungkin Lam, Edward Low (both used insider positions at TD Bank N.A. to defraud its customers; found through partial matching)",
+  "answer": "Two people defrauded TD Bank according to the result: Cheungkin Lam and Edward Low.\n\n- Cheungkin Lam\n- Edward Low",
+  "gremlin": "g.V().hasLabel('bank').has('name', TextP.containing('TD Bank')).in('defrauded').dedup().values('name')",
+  "secs": 6.2
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 10,
+  "section": "One hop",
+  "questions": [
+   "Which defendants still have charges pending?"
+  ],
+  "expected": "Ryan Small, Wayne Bessant",
+  "answer": "Eight defendants still have charges pending:\n\n- Ryan Small\n- Danny Seibel\n- Cheungkin Lam\n- Jason Morales\n- Thomas Mwangi\n- Wayne Bessant\n- Mercedes Henry\n- Shaun U. Christian\n\nThe query matched any charge whose status contains \"pending\". The result lists names only, so it does not show which charges are pending or how many each defendant has.",
+  "gremlin": "g.V().hasLabel('defendant').where(outE('charged_with').has('charge_status', TextP.containing('pending'))).project('name').by('name')",
+  "secs": 6.7
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 11,
+  "section": "Numeric and date filters",
+  "questions": [
+   "Who defrauded a bank of more than 500,000 dollars?"
+  ],
+  "expected": "Thomas Mwangi (24,000,000, First Financial Bank), Aaron T. Luneke (4,320,000, Bank of the Valley), Cheungkin Lam (3,433,989.07, TD Bank N.A.; his fraud losses across both schemes), Mercedes Henry (931,500, Ameris Bank)",
+  "answer": "Three defendants defrauded banks of more than $500,000, across 4 incidents in total.\n\n- **Thomas Mwangi** defrauded First Financial Bank of $24,000,000.\n- **Mercedes Henry** defrauded Ameris Bank of $931,500.\n- **Aaron T. Luneke** defrauded Stearns Bank of $3,500,000.\n- **Aaron T. Luneke** also defrauded Bank of the Valley of $4,320,000.",
+  "gremlin": "g.V().hasLabel('defendant').as('d').outE('defrauded').has('amount', P.gt(500000)).as('e').inV().hasLabel('bank').as('b').select('d', 'b', 'e').by('name').by('name').by('amount')",
+  "secs": 6.7
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 12,
+  "section": "Numeric and date filters",
+  "questions": [
+   "Which defendants are older than 50?"
+  ],
+  "expected": "Gary Topolewski (64), Shaun U. Christian (57), Thomas Lee (56), Danny Seibel (55), John B. Mensch (55), Tracy L. Kellerstrass (51)",
+  "answer": "The generated Gremlin could not be executed:\n\n```\nServer Exception: Don't accept query based on properties [age] that are not indexed in label 'defendant', may not match secondary/range condition\n```",
+  "gremlin": "g.V().hasLabel('defendant').has('age', P.gt(50)).project('name', 'age').by('name').by('age')",
+  "secs": 3.1
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 13,
+  "section": "Numeric and date filters",
+  "questions": [
+   "Which defendants are younger than 30?"
+  ],
+  "expected": "Cheungkin Lam (28), Victor Kolawole (26), Keith Wainaina (24), Trinity Antonetty (24)",
+  "answer": "The generated Gremlin could not be executed:\n\n```\nServer Exception: Don't accept query based on properties [age] that are not indexed in label 'defendant', may not match secondary/range condition\n```",
+  "gremlin": "g.V().hasLabel('defendant').has('age', P.lt(30)).project('name', 'age').by('name').by('age')",
+  "secs": 2.9
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 14,
+  "section": "Numeric and date filters",
+  "questions": [
+   "Which defendants are scheduled for sentencing in December 2026?"
+  ],
+  "expected": "Andrew Hooper and Patricia Kearse (Dec 7), Britany Brown (Dec 8), Clarence Semmon and Joseph Graves-Carmichael (Dec 9), Thomas Lee and Shabazz Rouzard (Dec 16), Raymond Wade and John Gerard Ebert (Dec 17)",
+  "answer": "The generated Gremlin could not be executed:\n\n```\nServer Exception: Don't accept query based on properties [sentencing_date] that are not indexed in label 'defendant', may not match secondary/range condition\n```",
+  "gremlin": "g.V().hasLabel('defendant').has('sentencing_date', P.gte('2026-12-01')).has('sentencing_date', P.lt('2027-01-01')).project('name', 'sentencing_date').by('name').by('sentencing_date')",
+  "secs": 3.5
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 15,
+  "section": "Numeric and date filters",
+  "questions": [
+   "Who is scheduled for sentencing in July 2026?"
+  ],
+  "expected": "Gary Topolewski (Jul 7), Aaron T. Luneke (Jul 13), Edward Low (Jul 14), John B. Mensch (Jul 15), Tracy L. Kellerstrass (Jul 22), Victor Kolawole (Jul 23)",
+  "answer": "The generated Gremlin could not be executed:\n\n```\nServer Exception: Don't accept query based on properties [sentencing_date] that are not indexed in label 'defendant', may not match secondary/range condition\n```",
+  "gremlin": "g.V().hasLabel('defendant').has('sentencing_date', P.gte('2026-07-01')).has('sentencing_date', P.lt('2026-08-01')).project('name', 'sentencing_date').by('name').by('sentencing_date')",
+  "secs": 5.5
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 16,
+  "section": "Numeric and date filters",
+  "questions": [
+   "Who is scheduled for sentencing in 2027?"
+  ],
+  "expected": "Dwayne Reddon (2027-02-09)",
+  "answer": "The generated Gremlin could not be executed:\n\n```\nServer Exception: Don't accept query based on properties [sentencing_date] that are not indexed in label 'defendant', may not match secondary/range condition\n```",
+  "gremlin": "g.V().hasLabel('defendant').has('sentencing_date', P.gte('2027-01-01')).has('sentencing_date', P.lt('2028-01-01')).project('name', 'sentencing_date').by('name').by('sentencing_date')",
+  "secs": 3.0
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 17,
+  "section": "Numeric and date filters",
+  "questions": [
+   "Which crimes carry a maximum of 30 years in prison?"
+  ],
+  "expected": "Bank fraud, conspiracy to commit bank fraud, bank fraud conspiracy, false bank entries, making false bank entries or reports, conspiracy to commit wire fraud affecting a financial institution",
+  "answer": "The generated Gremlin could not be executed:\n\n```\nServer Exception: Don't accept query based on properties [max_prison_years] that are not indexed in label 'crime', may not match secondary condition\n```",
+  "gremlin": "g.V().hasLabel('crime').has('max_prison_years', 30).project('name', 'max_prison_years').by('name').by('max_prison_years')",
+  "secs": 2.7
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 18,
+  "section": "Numeric and date filters",
+  "questions": [
+   "Which crimes carry a maximum of 10 years or less?"
+  ],
+  "expected": "Money Laundering (10), failure to maintain an anti-money laundering program (10), embezzlement of labor union funds (5), obstructing the examination of a financial institution (5), falsification of labor union reports (1). Aggravated identity theft is not one: its two years are a mandatory minimum, but a graph may store them as the maximum",
+  "answer": "The generated Gremlin could not be executed:\n\n```\nServer Exception: Don't accept query based on properties [max_prison_years] that are not indexed in label 'crime', may not match secondary/range condition\n```",
+  "gremlin": "g.V().hasLabel('crime').has('max_prison_years', P.lte(10)).project('name', 'max_prison_years').by('name').by('max_prison_years')",
+  "secs": 2.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 19,
+  "section": "Multi-hop",
+  "questions": [
+   "Which judge presided over Britany Brown's co-defendants?"
+  ],
+  "expected": "Michael A. Shipp",
+  "answer": "There is 1 result: Judge Michael A. Shipp presided over the co-defendants of Britany Brown.\n\n- **Judge:** Michael A. Shipp\n\nThe result lists only the judge's name. It does not say which co-defendants he presided over or how many there were.",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Britany Brown').both('co_defendant_with').dedup().in('presided_over').dedup().values('name')",
+  "secs": 5.1
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 20,
+  "section": "Multi-hop",
+  "questions": [
+   "Which agencies investigated Raymond Wade's co-defendants?"
+  ],
+  "expected": "U.S. Postal Inspection Service, Federal Bureau of Investigation, Homeland Security Investigations, Defense Criminal Investigative Service, Treasury Inspector General for Tax Administration, Internal Revenue Service – Criminal Investigation, U.S. Air Force – Office of Special Investigations (all through Dwayne Reddon)",
+  "answer": "Seven agencies investigated Raymond Wade's co-defendants.\n\n- U.S. Postal Inspection Service\n- Federal Bureau of Investigation\n- Homeland Security Investigations\n- Defense Criminal Investigative Service\n- Treasury Inspector General for Tax Administration\n- Internal Revenue Service – Criminal Investigation\n- U.S. Air Force – Office of Special Investigations\n\nThe result is a deduplicated list of agency names. It does not show which agency investigated which co-defendant.",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Raymond Wade').both('co_defendant_with').dedup().in('investigated').hasLabel('agency').dedup().values('name')",
+  "secs": 7.0
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 21,
+  "section": "Multi-hop",
+  "questions": [
+   "Which judges presided over defendants who defrauded a bank?"
+  ],
+  "expected": "Esther Salas, Nusrat J. Choudhury, Brian C. Buescher",
+  "answer": "Three judges presided over defendants who defrauded someone: Esther Salas, Brian C. Buescher, and Nusrat J. Choudhury.\n\n- Esther Salas\n- Brian C. Buescher\n- Nusrat J. Choudhury\n\nThe query only checked for a \"defrauded\" relationship and did not filter for a bank as the victim. The result therefore shows judges linked to defendants who defrauded any target, which may not all be banks.",
+  "gremlin": "g.V().hasLabel('judge').where(out('presided_over').out('defrauded')).dedup().values('name')",
+  "secs": 6.0
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 22,
+  "section": "Multi-hop",
+  "questions": [
+   "Which defendants investigated by the Federal Bureau of Investigation defrauded a bank?"
+  ],
+  "expected": "Thomas Mwangi, John B. Mensch, Mercedes Henry, Aaron T. Luneke",
+  "answer": "Four defendants investigated by the FBI also have a \"defrauded\" relationship, but the query does not confirm that the victim was a bank.\n\n- Thomas Mwangi\n- John B. Mensch\n- Mercedes Henry\n- Aaron T. Luneke\n\nThe query checked only for any \"defrauded\" link, not whether the target was a bank. So these four may include defendants who defrauded other kinds of victims.",
+  "gremlin": "g.V().hasLabel('agency').has('name', TextP.containing('Federal Bureau of Investigation')).out('investigated').where(out('defrauded')).dedup().values('name')",
+  "secs": 7.7
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 23,
+  "section": "Multi-hop",
+  "questions": [
+   "Who were Phalentz Vernot's co-defendants, and which judge presided over them?"
+  ],
+  "expected": "Keith Wainaina and Victor Kolawole, both before \"Julie E. Kobick\" (stored separately from \"Julia E. Kobick\"). An answer that also lists Trinity Antonetty is acceptable: she worked with Vernot and was also before Judge Kobick, but the releases say she was charged in a related case, not as his co-defendant",
+  "answer": "Phalentz Vernot has 3 co-defendants in the result: Keith Wainaina, Victor Kolawole, and Trinity Antonetty. The judge is listed as Julie E. Kobick for two of them and \"Julia E. Kobick\" for the third.\n\n- **Keith Wainaina**: Judge Julie E. Kobick\n- **Victor Kolawole**: Judge Julie E. Kobick\n- **Trinity Antonetty**: Judge Julia E. Kobick\n\nThe \"Julia\" spelling for Antonetty is probably a variant or typo of the same judge's name, but the data does not confirm this. The query also returns each co-defendant's judge, not Vernot's own, so it does not directly show who presided over Vernot.",
+  "gremlin": "g.V().hasLabel('defendant').has('name', 'Phalentz Vernot').both('co_defendant_with').dedup().project('co_defendant', 'judge').by('name').by(coalesce(__.in('presided_over').values('name'), constant('')))",
+  "secs": 9.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 24,
+  "section": "Multi-hop",
+  "questions": [
+   "Which judges presided over defendants who are older than 50?"
+  ],
+  "expected": "Michael A. Shipp (Thomas Lee), Nusrat J. Choudhury (John B. Mensch), Beth Phillips (Tracy L. Kellerstrass)",
+  "answer": "Three judges presided over defendants older than 50:\n\n- Beth Phillips\n- Michael A. Shipp\n- Nusrat J. Choudhury\n\nThe result lists only the judges' names. It does not include the defendants or their ages.",
+  "gremlin": "g.V().hasLabel('judge').where(out('presided_over').hasLabel('defendant').has('age', P.gt(50))).values('name').dedup()",
+  "secs": 7.0
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 25,
+  "section": "Aggregation",
+  "questions": [
+   "Which crime has the most defendants?"
+  ],
+  "expected": "Conspiracy to commit bank fraud (19)",
+  "answer": "The crime with the most defendants is **conspiracy to commit bank fraud**, with 19 defendants (1 result in total).\n\n- **Crime:** conspiracy to commit bank fraud\n- **Defendants charged:** 19\n\nThe query counted distinct vertices linked by `charged_with` edges, so I'm treating these as defendants. It returned only the top crime, so I can't say how close other crimes were.",
+  "gremlin": "g.V().hasLabel('crime').project('name', 'count').by('name').by(__.in('charged_with').dedup().count()).order().by(select('count'), desc).limit(1)",
+  "secs": 8.8
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 26,
+  "section": "Aggregation",
+  "questions": [
+   "Which judge presided over the most defendants?"
+  ],
+  "expected": "Michael A. Shipp (10)",
+  "answer": "Judge Michael A. Shipp presided over the most defendants, with 10 (1 result in total).\n\n- **Michael A. Shipp** (judge): presided over 10 defendants\n\nNote: the query returned only the top judge, so there is no information on ties or on how other judges compare.",
+  "gremlin": "g.V().hasLabel('judge').project('name', 'count').by('name').by(out('presided_over').count()).order().by(select('count'), desc).limit(1)",
+  "secs": 7.2
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 27,
+  "section": "Aggregation",
+  "questions": [
+   "Which prosecutor handled the most defendants?"
+  ],
+  "expected": "Benjamin D. Bleiberg (10)",
+  "answer": "Benjamin D. Bleiberg is the prosecutor who handled the most defendants, with 10 (1 result in total).\n\n- **Prosecutor:** Benjamin D. Bleiberg\n- **Defendants prosecuted:** 10\n\nThe query returned only the top prosecutor, so it doesn't show how close the others were or whether any tied.",
+  "gremlin": "g.V().hasLabel('prosecutor').project('name', 'count').by('name').by(out('prosecuted').count()).order().by(select('count'), desc).limit(1)",
+  "secs": 5.7
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 28,
+  "section": "Aggregation",
+  "questions": [
+   "Which agency investigated the most defendants?"
+  ],
+  "expected": "Federal Bureau of Investigation (12); another 2 defendants are under \"FBI\"",
+  "answer": "The Federal Bureau of Investigation investigated the most defendants, with 17 (1 result in total).\n\n- **Federal Bureau of Investigation**: 17 defendants investigated\n\nThe query returned only the top agency, so there are no counts here for other agencies to compare against.",
+  "gremlin": "g.V().hasLabel('agency').project('name', 'count').by('name').by(out('investigated').hasLabel('defendant').count()).order().by(select('count'), desc).limit(1)",
+  "secs": 7.9
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 29,
+  "section": "Follow-up questions",
+  "questions": [
+   "Who were Britany Brown's co-defendants?",
+   "Which judge presided over them?"
+  ],
+  "expected": "Michael A. Shipp",
+  "answer": "_Interpreted as: Which judge presided over Thomas Lee, Andrew Hooper, Clarence Semmon, Patricia Kearse, Shabazz Rouzard, John Gerard Ebert, and Joseph Graves-Carmichael?_\n\nThere is 1 result: Judge Michael A. Shipp presided over all seven named defendants.\n\n- **Judge:** Michael A. Shipp\n- **Defendants presided over (matched by the query):**\n  - Thomas Lee\n  - Andrew Hooper\n  - Clarence Semmon\n  - Patricia Kearse\n  - Shabazz Rouzard\n  - John Gerard Ebert\n  - Joseph Graves-Carmichael\n\nThe query only returns judges linked by a `presided_over` edge to every one of these defendants, so this one judge satisfies all seven conditions.",
+  "gremlin": "g.V().hasLabel('judge').and(\n  out('presided_over').hasLabel('defendant').has('name', 'Thomas Lee'),\n  out('presided_over').hasLabel('defendant').has('name', 'Andrew Hooper'),\n  out('presided_over').hasLabel('defendant').has('name', 'Clarence Semmon'),\n  out('presided_over').hasLabel('defendant').has('name', 'Patricia Kearse'),\n  out('presided_over').hasLabel('defendant').has('name', 'Shabazz Rouzard'),\n  out('presided_over').hasLabel('defendant').has('name', 'John Gerard Ebert'),\n  out('presided_over').hasLabel('defendant').has('name', 'Joseph Graves-Carmichael')\n).values('name')",
+  "secs": 17.5
+ },
+ {
+  "model": "anthropic/claude-sonnet",
+  "n": 30,
+  "section": "Follow-up questions",
+  "questions": [
+   "Which defendants are younger than 30?",
+   "Which judges presided over them?"
+  ],
+  "expected": "Esther Salas (Cheungkin Lam), Julie E. Kobick (Victor Kolawole, Keith Wainaina), Julia E. Kobick (Trinity Antonetty)",
+  "answer": "_Interpreted as: Which judges presided over the defendants younger than 30?_\n\nThe generated Gremlin could not be executed:\n\n```\nServer Exception: Don't accept query based on properties [age] that are not indexed in label 'defendant', may not match secondary/range condition\n```",
+  "gremlin": "g.V().hasLabel('defendant').has('age', P.lt(30)).in('presided_over').hasLabel('judge').dedup().values('name')",
+  "secs": 10.1
+ }
+]

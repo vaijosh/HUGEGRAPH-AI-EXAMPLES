@@ -1,0 +1,9 @@
+# Web UI framework
+gradio>=4.0.0
+
+# Claude / OpenAI access (optional providers)
+litellm>=1.0.0
+
+# Editable local packages from the cloned repo; set HUGEGRAPH_AI_HOME to wherever you cloned it (README step 1)
+-e ${HUGEGRAPH_AI_HOME}/hugegraph-python-client
+-e ${HUGEGRAPH_AI_HOME}/hugegraph-llm

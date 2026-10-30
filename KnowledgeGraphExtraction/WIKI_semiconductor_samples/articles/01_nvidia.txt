@@ -1,0 +1,24 @@
+Title: Nvidia
+Source: https://en.wikipedia.org/wiki/Nvidia
+
+Nvidia Corporation ( en-VID-ee-ə) is an American multinational technology company headquartered in Santa Clara, California. The company develops graphics processing units (GPUs), systems on chips (SoCs), and application programming interfaces (APIs) for data science, high-performance computing, artificial intelligence (AI), and mobile and automotive applications. Founded in 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem, Nvidia has been described as a Big Tech company and is among the largest companies by market capitalization.
+
+Originally focused on GPUs for video games, Nvidia broadened their usage into other markets, including AI, professional visualization, and supercomputing. The company's product lines include GeForce GPUs for gaming and creative workloads, and professional GPUs for edge computing, scientific research, and industrial applications. In 2025, Nvidia became the first company to surpass US$4 trillion and US$5 trillion in market capitalization, largely driven by the AI boom and soaring demand for its AI data center hardware.
+
+History
+
+Founding
+
+Nvidia was founded on April 5, 1993, by Jensen Huang, a Taiwanese-American electrical engineer who was previously the director of CoreWare at LSI Logic and a microprocessor designer at AMD, Chris Malachowsky, an engineer who worked at Sun Microsystems, and Curtis Priem, who was previously a senior staff engineer and graphics chip designer at IBM and Sun Microsystems. In late 1992, the three men agreed to start the company by sketching out their initial ideas in a meeting at a Denny's roadside diner on Berryessa Road in East San Jose.
+
+At the time, Malachowsky and Priem were frustrated with Sun's management and were looking to leave, but Huang was on "firmer ground", in that he was already running his own division at LSI. The three co-founders discussed a vision of the future for gaming and multimedia markets, which was so compelling that Huang decided to leave LSI and become the chief executive officer of their new startup.
+
+The three co-founders envisioned 3D graphics-based processing as the best trajectory for tackling challenges that had eluded general-purpose computing methods. As Huang later explained: "We also observed that video games were simultaneously one of the most computationally challenging problems and would have incredibly high sales volume. Those two conditions don't happen very often. Video games was our killer app – a flywheel to reach large markets funding huge R&D to solve massive computational problems."
+
+The first problem was who would quit first. Huang's wife, Lori, did not want him to resign from LSI unless Malachowsky resigned from Sun at the same time, and Malachowsky's wife, Melody, felt the same way about Huang. Priem broke that deadlock by resigning first from Sun, effective December 31, 1992. According to Priem, this put pressure on Huang and Malachowsky to not leave him to "flail alone", so they gave notice too. Huang left LSI and "officially joined Priem on February 17", which was also Huang's 30th birthday, while Malachowsky left Sun in early March. In early 1993, the three founders began working together on their new startup in Priem's townhouse in Fremont, California.
+
+With $40,000 in the bank (equivalent to $89,000 in 2025), the company was born. The company subsequently received $20 million of venture capital funding from Sequoia Capital, Sutter Hill Ventures, and others.
+
+During the late 1990s, Nvidia was one of 70 startup companies pursuing the idea that graphics acceleration for video games was the path to the future. Only two survived: Nvidia and ATI Technologies, the latter of which merged into AMD.
+
+Nvidia initially had no name. Priem's first idea was "Primal Graphics", a syllabic abbreviation of two of the founders' last names, but that left out Huang. They soon discovered it was impossible to create a workable name with syllables from all three founders' names, after considering "Huaprimal", "Prihuamal", "Malluapri", etc. The next idea came from Priem's idea for the name of Nvidia's first product. Priem originally wanted to call it the "GXNV", as in the "next version" of the GX graphics chips which he had worked on at Sun. Then Huang told Priem to "drop the GX", resulting in the name "NV". Priem made a list of words with the letters "NV" in them. At one point, Malachowsky and Priem wanted to call the company NVision, but that name was already taken by a manufacturer of toilet paper. Both Priem and Huang have taken credit for coming up with the name Nvidia, from "invidia", the Latin word for "envy". After the company outgrew Priem's townhouse, its original headquarters office was in Sunnyvale, California.

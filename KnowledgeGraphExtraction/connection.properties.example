@@ -1,0 +1,23 @@
+# Connection settings for graphrag_showcase.py and the benchmark scripts.
+# Copy this file to connection.properties and fill in your values. Lines are KEY=VALUE with the same names as the
+# environment variables; an environment variable wins over this file. Lines starting with # or ! are comments.
+
+# HugeGraph server
+HUGEGRAPH_URL=127.0.0.1:8080
+HUGEGRAPH_GRAPH=hugegraph
+# Blank means the server's default graph space (DEFAULT on HugeGraph 1.7 and later).
+HUGEGRAPH_GRAPHSPACE=
+HUGEGRAPH_USER=admin
+HUGEGRAPH_PASSWORD=admin
+# Backend for a new graph in an empty graph space: rocksdb (standalone) or hstore (cluster with PD).
+# When left out and the graph space has other graphs, a new graph copies the configuration of one of them.
+#HUGEGRAPH_BACKEND=hstore
+
+# LLM provider: ollama, claude or openai. Model and key settings use the names listed in README.md.
+#LLM_PROVIDER=claude
+#ANTHROPIC_BASE_URL=https://ai-gateway.example.com
+#ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet
+
+# Ollama (local models and, with Claude, embeddings)
+#OLLAMA_HOST_IP=127.0.0.1
+#OLLAMA_PORT=11434

@@ -1,0 +1,4 @@
+prowide_*.txt are test fixtures from Prowide Core (https://github.com/prowide/prowide-core),
+src/test/resources/{MT101.fin, MT103-bulk-with-ack.rje, MT103-out-ack.rje}, licensed under the
+Apache License 2.0 (https://www.apache.org/licenses/LICENSE-2.0). Converted to .txt; '$' batch
+separators replaced with blank lines. All other files here are synthetic messages sampled from archive.zip.

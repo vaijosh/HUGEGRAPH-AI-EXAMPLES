@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local settings and credentials (see connection.properties.example)
+connection.properties
+.claude/settings.local.json
+
+# IDE and OS
+.idea/
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Large binaries not used by the code
+KnowledgeGraphExtraction/archive.zip
+KnowledgeGraphExtraction/pdfbox-app-3.0.8.jar

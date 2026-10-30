@@ -1,0 +1,364 @@
+[
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 1,
+  "section": "One hop",
+  "questions": [
+   "Which company did Brendan Lawler own?"
+  ],
+  "expected": "BL Insurance Brokerage, LLC (owned with Lisa Lawler)",
+  "answer": "Brendan Lawler owns one company.\n\n**Company owned by Brendan Lawler:**\n- BL Insurance Brokerage, LLC",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Brendan Lawler').out('owns').hasLabel('organization').values('name')",
+  "secs": 11.1
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 2,
+  "section": "One hop",
+  "questions": [
+   "Who is Brendan Lawler's spouse?"
+  ],
+  "expected": "Lisa Lawler",
+  "answer": "Brendan Lawler's spouse is **Lisa Lawler**.\n\nThere is 1 result:\n\n- **Lisa Lawler** – spouse of Brendan Lawler",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Brendan Lawler').both('spouse_of').values('name')",
+  "secs": 8.2
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 3,
+  "section": "One hop",
+  "questions": [
+   "Which judge sentenced Brendan Lawler, and to how many months?"
+  ],
+  "expected": "Myong J. Joun, 8 months",
+  "answer": "Brendan Lawler was sentenced by **Myong J. Joun** to **8 months**.\n\n| Judge | Sentence (months) |\n|-------|-------------------|\n| Myong J. Joun | 8 |",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Brendan Lawler').outE('sentenced_by').as('e').inV().as('judge').select('judge', 'e').by('name').by('sentence_months')",
+  "secs": 19.0
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 4,
+  "section": "One hop",
+  "questions": [
+   "Which companies did James Keating own?"
+  ],
+  "expected": "Kodiak Asset Recovery, Surety Risk Solutions, American Construction & Industrial LLC",
+  "answer": "James Keating owned 1 company.\n\n- **American Construction & Industrial LLC**",
+  "gremlin": "g.V().hasLabel('person').has('name', 'James Keating').out('owns').hasLabel('organization').has('org_type', TextP.containing('compan')).values('name')",
+  "secs": 28.1
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 5,
+  "section": "One hop",
+  "questions": [
+   "Where was James Keating employed?"
+  ],
+  "expected": "U.S. Fire Insurance Company, Allied World Insurance Company",
+  "answer": "James Keating was employed at 2 companies.\n\n- **U.S. Fire Insurance Company**\n- **Allied World Insurance Company**",
+  "gremlin": "g.V().hasLabel('person').has('name', 'James Keating').out('employed_by').values('name')",
+  "secs": 14.0
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 6,
+  "section": "One hop",
+  "questions": [
+   "Which organization did Tonja Van Roy defraud, how much, and on what charge?"
+  ],
+  "expected": "AFCO Credit Corp., 3,700,000, wire fraud",
+  "answer": "Tonja Van Roy defrauded one organization.\n\n**Details:**\n- **Organization:** AFCO Credit Corp.\n- **Loss Amount:** $3,700,000\n- **Charge:** Wire fraud",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Tonja Van Roy').outE('defrauded').as('e').inV().as('org').select('org', 'e').by('name').by(valueMap('loss_amount', 'charge'))",
+  "secs": 11.0
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 7,
+  "section": "One hop",
+  "questions": [
+   "Which credit union did Heleonel Gonzalez defraud?"
+  ],
+  "expected": "Peach State Federal Credit Union (6,000,000, bank fraud)",
+  "answer": "Heleonel Gonzalez defrauded **Peach State Federal Credit Union**.\n\nThis is the single credit union identified in the knowledge graph as having been defrauded by Heleonel Gonzalez.",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Heleonel Gonzalez').out('defrauded').hasLabel('organization').has('org_type', TextP.containing('credit union')).values('name')",
+  "secs": 12.7
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 8,
+  "section": "One hop",
+  "questions": [
+   "Who conspired with Lisette Patricio?"
+  ],
+  "expected": "Arturo Morales, Yarelis Felipe, Darely Carballeira",
+  "answer": "Lisette Patricio conspired with 3 people.\n\n- **Arturo Morales**\n- **Yarelis Felipe**\n- **Darely Carballeira**",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Lisette Patricio').both('conspired_with').values('name')",
+  "secs": 10.3
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 9,
+  "section": "One hop",
+  "questions": [
+   "Who conspired with Jaron Earl Taylor?"
+  ],
+  "expected": "Davion Percy, Candace Tyler, Conrad D’Haiti, Michael Anthony Owen, Jr. Conrad D’Haiti appears twice, stored once with a straight and once with a curly apostrophe.",
+  "answer": "According to the knowledge graph, Jaron Earl Taylor conspired with 4 distinct individuals (5 results with one duplicate).\n\n**Conspirators:**\n- Davion Percy\n- Candace Tyler\n- Conrad D'Haiti\n- Michael Anthony Owen, Jr.",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Jaron Earl Taylor').both('conspired_with').dedup().values('name')",
+  "secs": 10.4
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 10,
+  "section": "One hop",
+  "questions": [
+   "Which organizations investigated Tonja Van Roy?"
+  ],
+  "expected": "Homeland Security Investigations, California Department of Insurance",
+  "answer": "Tonja Van Roy was investigated by 2 organizations.\n\n- **Homeland Security Investigations**\n- **California Department of Insurance**",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Tonja Van Roy').out('investigated_by').hasLabel('organization').values('name')",
+  "secs": 7.4
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 11,
+  "section": "One hop",
+  "questions": [
+   "Who prosecuted Louis Belletieri?"
+  ],
+  "expected": "John J. Boscia, Rebecca J. Kulik",
+  "answer": "Louis Belletieri was prosecuted by 2 individuals.\n\n- **John J. Boscia**\n- **Rebecca J. Kulik**",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Louis Belletieri').out('prosecuted_by').values('name')",
+  "secs": 9.4
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 12,
+  "section": "One hop",
+  "questions": [
+   "Which defendants did Joseph Baldwin prosecute?"
+  ],
+  "expected": "Davion Percy, Candace Tyler, Conrad D'Haiti, Jaron Earl Taylor, Michael Anthony Owen, Jr.",
+  "answer": "Joseph Baldwin prosecuted 5 defendants in total.\n\nThe defendants are:\n- Davion Percy\n- Candace Tyler\n- Conrad D'Haiti\n- Jaron Earl Taylor\n- Michael Anthony Owen, Jr.",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Joseph Baldwin').in('prosecuted_by').values('name')",
+  "secs": 10.2
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 13,
+  "section": "One hop",
+  "questions": [
+   "Which people were police officers?"
+  ],
+  "expected": "Davion Percy, Candace Tyler, Conrad D'Haiti (twice, both apostrophe spellings), Jaron Earl Taylor, CHRISTIAN CONRAD CLAUS, Michael Anthony Owen, Jr.",
+  "answer": "Based on the query results, there are 7 people identified as police officers in the knowledge graph.\n\n**Police Officers:**\n- Davion Percy\n- Candace Tyler\n- Conrad D'Haiti (appears twice in results)\n- Jaron Earl Taylor\n- Christian Conrad Claus\n- Michael Anthony Owen, Jr.\n\nNote: Conrad D'Haiti appears as a duplicate entry in the data.",
+  "gremlin": "g.V().hasLabel('person').has('occupation', 'police officer').values('name')",
+  "secs": 10.2
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 14,
+  "section": "Numeric and text filters",
+  "questions": [
+   "Which defendants were sentenced to more than 48 months?"
+  ],
+  "expected": "James William Wilson, Jr. (144), Thomas J. Lemmen (70), Louis Belletieri (54), Lonnie White (53), Tonja Van Roy (50)",
+  "answer": "Five defendants were sentenced to more than 48 months:\n\n| Defendant | Sentence (months) |\n|-----------|------------------|\n| James William Wilson, Jr. | 144 |\n| Thomas J. Lemmen | 70 |\n| Louis Belletieri | 54 |\n| Lonnie White | 53 |\n| Tonja Van Roy | 50 |",
+  "gremlin": "g.V().hasLabel('person').as('defendant').outE('sentenced_by').has('sentence_months', P.gt(48)).as('sentence').inV().as('judge').select('defendant', 'sentence').by('name').by('sentence_months')",
+  "secs": 13.4
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 15,
+  "section": "Numeric and text filters",
+  "questions": [
+   "Which defendants were sentenced to less than 12 months?"
+  ],
+  "expected": "Lisa Lawler (8), Brendan Lawler (8), Michael Anthony Owen, Jr. (6)",
+  "answer": "The query ran but returned no results. Try rephrasing the question.",
+  "gremlin": "g.V().hasLabel('person').as('defendant').outE('sentenced_by').has('sentence_months', P.lt(12)).as('sentence').inV().as('judge').select('defendant', 'sentence_months').by('name').by(select('sentence').values('sentence_months'))",
+  "secs": 7.0
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 16,
+  "section": "Numeric and text filters",
+  "questions": [
+   "Which defendants were ordered to pay more than 1,000,000 dollars in restitution?"
+  ],
+  "expected": "Maureen Ann Wilson and James William Wilson, Jr. (18,705,520.30 each), Louis Belletieri (6,000,000), Lonnie White (2,375,861), Christian Decristofaro (2,196,323), Tonja Van Roy (1,880,237), Thomas J. Lemmen (1,601,505.27), James Keating (1,226,603.97)",
+  "answer": "The query ran but returned no results. Try rephrasing the question.",
+  "gremlin": "g.V().hasLabel('person').as('defendant').outE('sentenced_by').has('restitution_amount', P.gt(1000000)).as('sentence').inV().as('judge').select('defendant', 'restitution_amount').by('name').by(select('sentence').by('restitution_amount'))",
+  "secs": 7.0
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 17,
+  "section": "Numeric and text filters",
+  "questions": [
+   "Who defrauded an organization of more than 1,000,000 dollars?"
+  ],
+  "expected": "Heleonel Gonzalez (6,000,000, Peach State Federal Credit Union), Tonja Van Roy (3,700,000, AFCO Credit Corp.), Christian Decristofaro (2,196,323, home repair insurance provider), James Keating (1,446,491.95, Allied World Insurance Company)",
+  "answer": "Based on the query results, **4 people** defrauded organizations of more than $1,000,000:\n\n- **James Keating**\n- **Tonja Van Roy**\n- **Heleonel Gonzalez**\n- **Christian Decristofaro**",
+  "gremlin": "g.V().hasLabel('person').as('p').outE('defrauded').has('loss_amount', P.gt(1000000)).as('e').inV().hasLabel('organization').as('o').select('p').by('name')",
+  "secs": 15.3
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 18,
+  "section": "Numeric and text filters",
+  "questions": [
+   "Which people are older than 60?"
+  ],
+  "expected": "Maureen Wilson, Maureen Ann Wilson and James William Wilson, Jr. (77), Lisette Patricio (64); Maureen Wilson is also stored as \"Maureen\" (76), so she appears three times",
+  "answer": "There are 5 people older than 60 in the knowledge graph.\n\n| Name | Age |\n|------|-----|\n| Lisette Patricio | 64 |\n| Maureen | 76 |\n| Maureen Wilson | 77 |\n| Maureen Ann Wilson | 77 |\n| James William Wilson, Jr. | 77 |",
+  "gremlin": "g.V().hasLabel('person').has('age', P.gt(60)).project('name', 'age').by('name').by('age')",
+  "secs": 9.8
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 19,
+  "section": "Numeric and text filters",
+  "questions": [
+   "Who was charged with wire fraud?"
+  ],
+  "expected": "James Keating, Tonja Van Roy, Louis Belletieri, Bruno Francis Ragusa, Christian Decristofaro; also Conrad D'Haiti and Jaron Earl Taylor, whose charges are conspiracies that include wire fraud",
+  "answer": "Seven individuals were charged with wire fraud or related conspiracy charges:\n\n| Person | Charge | Loss Amount | Victim |\n|--------|--------|-------------|--------|\n| James Keating | wire fraud | $1,446,491.95 | Allied World Insurance Company |\n| Tonja Van Roy | wire fraud | $3,700,000.00 | AFCO Credit Corp. |\n| Conrad D'Haiti | conspiracy to commit mail and wire fraud | $17,585.00 | Liberty Mutual Insurance |\n| Louis Belletieri | wire fraud | $825,000.00 | Small Business Administration |\n| Jaron Earl Taylor | conspiracy to commit wire fraud | $38,670.00 | United Services Automobile Association |\n| Bruno Francis Ragusa | wire fraud | $136,956.56 | Insurance company |\n| Christian Decristofaro | wire fraud | $2,196,323.00 | Home repair insurance provider |",
+  "gremlin": "g.V().hasLabel('person').outE('defrauded').has('charge', TextP.containing('wire fraud')).inV().path().by('name').by(valueMap('charge', 'loss_amount')).by('name')",
+  "secs": 18.0
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 20,
+  "section": "Multi-hop",
+  "questions": [
+   "Which defendants owned a company and also defrauded an organization, and which?"
+  ],
+  "expected": "James Keating (Kodiak Asset Recovery and two others; Allied World Insurance Company), Tonja Van Roy (Pegasus Insurance; AFCO Credit Corp.), David L. Mongeau (Mongeau Enterprises; U.S. Department of Agriculture and First National Bank of Syracuse), Heleonel Gonzalez (Sharp Insurance Agency, Inc.; Peach State Federal Credit Union), Christian Decristofaro (NE Premier Home Services LLC; home repair insurance provider)",
+  "answer": "Three defendants owned a company and also defrauded an organization.\n\n| Defendant | Owned Company | Defrauded Organization |\n|-----------|---------------|------------------------|\n| Tonja Van Roy | Pegasus Insurance | AFCO Credit Corp. |\n| Heleonel Gonzalez | Sharp Insurance Agency, Inc. | Peach State Federal Credit Union |\n| Christian Decristofaro | NE Premier Home Services LLC | Home repair insurance provider |",
+  "gremlin": "g.V().hasLabel('person').has('role', 'defendant').as('defendant').out('owns').hasLabel('organization').as('owned_company').select('defendant').out('defrauded').hasLabel('organization').as('defrauded_org').select('defendant', 'owned_company', 'defrauded_org').by('name').by('name').by('name')",
+  "secs": 14.1
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 21,
+  "section": "Multi-hop",
+  "questions": [
+   "Which judges sentenced defendants who defrauded an organization of more than 1,000,000 dollars?"
+  ],
+  "expected": "Victor A. Bolden (James Keating), Stephen V. Wilson (Tonja Van Roy), Indira Talwani (Christian Decristofaro)",
+  "answer": "The judges who sentenced defendants that defrauded organizations of more than $1,000,000 are **3 in total**:\n\n- **Victor A. Bolden**\n- **Stephen V. Wilson**\n- **Indira Talwani**",
+  "gremlin": "g.V().hasLabel('person').outE('defrauded').has('loss_amount', P.gt(1000000)).inV().hasLabel('organization').inE('defrauded').has('loss_amount', P.gt(1000000)).outV().hasLabel('person').out('sentenced_by').hasLabel('person').dedup().values('name')",
+  "secs": 12.1
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 22,
+  "section": "Multi-hop",
+  "questions": [
+   "Which married couples conspired together?"
+  ],
+  "expected": "Lonnie White and Lisa Ogletree, Brendan Lawler and Lisa Lawler, James William Wilson, Jr. and Maureen Ann Wilson (also stored as James Wilson and Maureen Wilson)",
+  "answer": "There are 4 married couples who conspired together.\n\n| Person 1 | Person 2 |\n|----------|----------|\n| Lonnie White | Lisa Ogletree |\n| Brendan Lawler | Lisa Lawler |\n| Maureen Wilson | James Wilson |\n| James William Wilson, Jr. | Maureen Ann Wilson |",
+  "gremlin": "g.V().hasLabel('person').as('p1').out('spouse_of').as('p2').select('p1').out('conspired_with').where(eq('p2')).select('p1', 'p2').by('name').by('name')",
+  "secs": 11.6
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 23,
+  "section": "Multi-hop",
+  "questions": [
+   "Who sentenced Jaron Earl Taylor's co-conspirators, and to how many months?"
+  ],
+  "expected": "Lydia Griggsby sentenced Michael Anthony Owen, Jr. to 6 months",
+  "answer": "Based on the query results, there is **1 co-conspirator** of Jaron Earl Taylor found with sentencing information.\n\n**Direct Answer:**\n- **Michael Anthony Owen, Jr.** (co-conspirator) was sentenced by **Judge Lydia Griggsby**\n\n**Note:** The query results show the judge who sentenced the co-conspirator, but the raw data does not include the number of months for the sentence. The sentence length information was not captured in this query result.",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Jaron Earl Taylor').out('conspired_with').as('conspirator').out('sentenced_by').as('judge').select('conspirator', 'judge').by('name').by('name').dedup()",
+  "secs": 14.1
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 24,
+  "section": "Multi-hop",
+  "questions": [
+   "Which organizations investigated Jaron Earl Taylor's co-conspirators?"
+  ],
+  "expected": "Federal Bureau of Investigation, Prince George’s County Police Department (stored under two apostrophe spellings)",
+  "answer": "Two organizations investigated Jaron Earl Taylor's co-conspirators.\n\n- **Federal Bureau of Investigation**\n- **Prince George's County Police Department**",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Jaron Earl Taylor').out('conspired_with').out('investigated_by').dedup().values('name')",
+  "secs": 14.1
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 25,
+  "section": "Aggregation",
+  "questions": [
+   "Which organization investigated the most defendants?"
+  ],
+  "expected": "Federal Bureau of Investigation (8); another 3 defendants are under \"FBI\"",
+  "answer": "The Federal Bureau of Investigation (FBI) investigated the most defendants, with a count of 5 investigations.\n\n| Organization | Number of Defendants Investigated |\n|--------------|-----------------------------------|\n| Federal Bureau of Investigation | 5 |",
+  "gremlin": "g.V().hasLabel('person').has('role', TextP.containing('defendant')).out('investigated_by').groupCount().by('name').unfold().order().by(values, desc).limit(1).project('organization', 'count').by(keys).by(values)",
+  "secs": 14.2
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 26,
+  "section": "Aggregation",
+  "questions": [
+   "Which defendant received the longest sentence?"
+  ],
+  "expected": "James William Wilson, Jr. (144 months)",
+  "answer": "The generated Gremlin could not be executed:\n\n```\nServer Exception: class java.lang.String cannot be cast to class org.apache.tinkerpop.gremlin.structure.Vertex (java.lang.String is in module java.base of loader 'bootstrap'; org.apache.tinkerpop.gremlin.structure.Vertex is in unnamed module of loader 'app')\n```",
+  "gremlin": "g.V().hasLabel('person').inE('sentenced_by').order().by('sentence_months', desc).limit(1).outV().as('defendant').select('defendant').by('name').as('name').inE('sentenced_by').as('sentence').select('name', 'sentence').by().by('sentence_months')",
+  "secs": 8.2
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 27,
+  "section": "Aggregation",
+  "questions": [
+   "Which charge appears most often?"
+  ],
+  "expected": "Wire fraud (5)",
+  "answer": "**Wire fraud** is the charge that appears most often, occurring 5 times in the knowledge graph.\n\n| Charge | Count |\n|--------|-------|\n| Wire fraud | 5 |",
+  "gremlin": "g.E().hasLabel('defrauded').has('charge').groupCount().by('charge').unfold().order().by(values, desc).limit(1).project('charge', 'count').by(keys).by(values)",
+  "secs": 14.0
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 28,
+  "section": "Aggregation",
+  "questions": [
+   "Which judges sentenced more than one defendant?"
+  ],
+  "expected": "Sara Lioi, Myong J. Joun, Lydia Griggsby, Deborah K. Chasanow (2 each)",
+  "answer": "Four judges sentenced more than one defendant:\n\n- **Myong J. Joun**\n- **Lydia Griggsby**\n- **Sara Lioi**\n- **Deborah K. Chasanow**",
+  "gremlin": "g.V().hasLabel('person').as('defendant').out('sentenced_by').hasLabel('person').as('judge').select('judge').groupCount().unfold().where(select(values).is(gt(1))).select(keys).values('name')",
+  "secs": 13.2
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 29,
+  "section": "Follow-up questions",
+  "questions": [
+   "Which organization did Tonja Van Roy defraud, how much, and on what charge?",
+   "Which judge sentenced her, and to how many months?"
+  ],
+  "expected": "Stephen V. Wilson, 50 months",
+  "answer": "_Interpreted as: Which judge sentenced Tonja Van Roy, and to how many months?_\n\nTonja Van Roy was sentenced by **Stephen V. Wilson** to **50 months**.\n\nThere is 1 result:\n\n| Judge | Sentence (months) |\n|-------|-------------------|\n| Stephen V. Wilson | 50 |",
+  "gremlin": "g.V().hasLabel('person').has('name', 'Tonja Van Roy').outE('sentenced_by').as('e').inV().as('judge').select('judge', 'e').by('name').by(coalesce(values('sentence_months'), constant('')))",
+  "secs": 30.3
+ },
+ {
+  "model": "anthropic/claude-opus-4-5",
+  "n": 30,
+  "section": "Follow-up questions",
+  "questions": [
+   "Who is Brendan Lawler's spouse?",
+   "Which company do they own?"
+  ],
+  "expected": "BL Insurance Brokerage, LLC",
+  "answer": "_Interpreted as: Which company do Brendan Lawler and Lisa Lawler own?_\n\nBrendan Lawler and Lisa Lawler both own **BL Insurance Brokerage, LLC**.\n\nThis is the single company that appears in the ownership records for both individuals in the knowledge graph.",
+  "gremlin": "g.V().hasLabel('person').has('name', within('Brendan Lawler', 'Lisa Lawler')).out('owns').hasLabel('organization').dedup().values('name')",
+  "secs": 25.7
+ }
+]
