@@ -1,8 +1,8 @@
 # Connection settings for graphrag_showcase.py and the benchmark scripts.
-# This file is committed and shared: keep only defaults here, never real hosts or passwords. Put this machine's
-# values in connection.properties.local next to it (git-ignored); any key set there wins over this file.
-# Lines are KEY=VALUE with the same names as the environment variables; an environment variable wins over both
-# files. Lines starting with # or ! are comments.
+# Copy this file to connection.properties (git-ignored) and keep only the values you change; keys left out use the
+# defaults shown here. The app never reads this .example file. Lines are KEY=VALUE with the same names as the
+# environment variables; an exported environment variable wins over connection.properties.
+# Lines starting with # or ! are comments.
 
 # Where you cloned hugegraph-ai (README step 1); read by `pip install -r requirements.txt` (README step 3), not by the app.
 # Use an absolute path: $HOME and ~ are not expanded here.
@@ -22,7 +22,9 @@ HUGEGRAPH_PASSWORD=admin
 # LLM provider: ollama, claude or openai. Model and key settings use the names listed in README.md.
 #LLM_PROVIDER=claude
 #ANTHROPIC_BASE_URL=https://ai-gateway.example.com
-#ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet
+# Must be a model your key may use: a gateway answers 403 "key_model_access_denied ... can only access models=[...]"
+# otherwise. Used as anthropic/<value>; CLAUDE_MODEL=anthropic/<model> sets the full name instead.
+#ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-4-6
 
 # Ollama (local models and, with Claude, embeddings)
 #OLLAMA_HOST_IP=127.0.0.1

@@ -15,17 +15,22 @@ Where the commands differ, each step shows a macOS block and a Linux (RHEL 9) bl
 ---
 
 ## 1. Clone the HugeGraph Source Code
-Clone the official Apache HugeGraph AI repository anywhere you like, and point `HUGEGRAPH_AI_HOME` at the clone.
-`requirements.txt` uses this variable to find the local packages when you run `pip install` (step 3).
+Clone the official Apache HugeGraph AI repository anywhere you like, check out the tested commit, and point
+`HUGEGRAPH_AI_HOME` at the clone. `requirements.txt` uses this variable to find the local packages when you run
+`pip install` (step 3).
 
 ```bash
 # Any location works; this is just an example
 export HUGEGRAPH_AI_HOME="$HOME/src/hugegraph-ai"
-git clone https://github.com/apache/incubator-hugegraph-ai.git "$HUGEGRAPH_AI_HOME"
+git clone https://github.com/apache/hugegraph-ai.git "$HUGEGRAPH_AI_HOME"
+git -C "$HUGEGRAPH_AI_HOME" checkout da11249745180471420890fd5a44aee93bc33bae   # tested commit, 2026-10-20
 ```
 
-To keep it for later, either put it in `connection.properties.local` in the demo folder (your own, git-ignored
-settings file; see step 5) as an absolute path:
+The demo and `constraints.txt` are tested against this commit. Later commits on `main` need Python 3.12 or newer
+and add a `hugegraph-llm-sdk` package that `requirements.txt` does not install, so `pip install` fails on them.
+
+To keep it for later, either put it in `connection.properties` in the demo folder (your own, git-ignored settings
+file, copied from `connection.properties.example`; see step 5) as an absolute path:
 ```properties
 HUGEGRAPH_AI_HOME=/home/you/src/hugegraph-ai
 ```
@@ -35,7 +40,7 @@ echo "export HUGEGRAPH_AI_HOME=\"$HUGEGRAPH_AI_HOME\"" >> ~/.zshrc
 ```
 
 ## 2. Set Up the Python Environment
-The `hugegraph-llm` module strictly requires Python 3.10 or 3.11.
+At the tested commit (step 1), the `hugegraph-llm` module strictly requires Python 3.10 or 3.11.
 
 **macOS:** to avoid `tcl-tk` compilation errors, use Homebrew's pre-compiled Python 3.11.
 ```bash
@@ -69,17 +74,26 @@ gradio>=4.0.0
 # Claude / OpenAI access (optional providers)
 litellm>=1.0.0
 
-# Editable local packages from the cloned repo; set HUGEGRAPH_AI_HOME to wherever you cloned it (README step 1)
+# Editable local packages from the cloned repo; set HUGEGRAPH_AI_HOME to wherever you cloned it, checked out at
+# the tested commit da11249 (README step 1)
 -e ${HUGEGRAPH_AI_HOME}/hugegraph-python-client
 -e ${HUGEGRAPH_AI_HOME}/hugegraph-llm
 ```
 
 Install the requirements. pip reads only environment variables, so when `HUGEGRAPH_AI_HOME` is not exported, the
-first line takes it from `connection.properties.local`:
+first line takes it from `connection.properties`:
 ```bash
-export HUGEGRAPH_AI_HOME="${HUGEGRAPH_AI_HOME:-$(awk -F= '$1 ~ /^[ \t]*HUGEGRAPH_AI_HOME[ \t]*$/ {sub(/^[^=]*=[ \t]*/, ""); sub(/[ \t]*$/, ""); print; exit}' connection.properties.local 2>/dev/null)}"
+export HUGEGRAPH_AI_HOME="${HUGEGRAPH_AI_HOME:-$(awk -F= '$1 ~ /^[ \t]*HUGEGRAPH_AI_HOME[ \t]*$/ {sub(/^[^=]*=[ \t]*/, ""); sub(/[ \t]*$/, ""); print; exit}' connection.properties 2>/dev/null)}"
 echo "$HUGEGRAPH_AI_HOME"        # must print your clone's path; if empty, set it as in step 1
 pip install -r requirements.txt -c constraints.txt
+```
+
+**Linux (RHEL 9) only:** hugegraph-llm pins `pycgraph==3.2.2`, whose Linux wheel was built with GCC 13 and fails to
+load on RHEL 9's GCC 11 runtime (`` /lib64/libstdc++.so.6: version `GLIBCXX_3.4.32' not found ``). From 3.2.4 on,
+the wheels need only `GLIBCXX_3.4.22`. Replace it with 3.2.5; pip then warns that hugegraph-llm requires 3.2.2,
+which is safe to ignore:
+```bash
+pip install --no-deps --force-reinstall pycgraph==3.2.5
 ```
 
 `constraints.txt` pins every dependency to a set of versions known to work together (checked on macOS, and for
@@ -96,8 +110,10 @@ brew install ollama
 brew services start ollama     # or run `ollama serve` in a separate terminal
 ```
 
-**Linux (RHEL 9):** the install script sets Ollama up as a systemd service.
+**Linux (RHEL 9):** the install script sets Ollama up as a systemd service. It needs `zstd` to unpack the
+download ("This version requires zstd for extraction"), which RHEL 9 does not install by default.
 ```bash
+sudo dnf install -y zstd
 curl -fsSL https://ollama.com/install.sh | sh
 sudo systemctl enable --now ollama
 ```
@@ -111,7 +127,7 @@ Then pull the models:
 #ollama pull qwen2.5:14b        # (Optional) extraction (~9 GB)
 ollama pull nomic-embed-text   # embeddings
 ```
-Verify Ollama is up: `curl http://127.0.0.1:11434/api/tags` should list all three models.
+Verify Ollama is up: `curl http://127.0.0.1:11434/api/tags` should list the models you pulled.
 
 ## 5. Run the HugeGraph Database
 Either run a local HugeGraph server via Docker on port `8080` (on RHEL 9, `podman` takes the same arguments):
@@ -119,8 +135,13 @@ Either run a local HugeGraph server via Docker on port `8080` (on RHEL 9, `podma
 docker run -itd --name=hugegraph -p 8080:8080 -p 8182:8182 hugegraph/hugegraph
 ```
 
-or use an existing HugeGraph server, such as one on a cluster. Create `connection.properties.local` in the demo
-folder and set the address, graph, graph space and login there:
+or use an existing HugeGraph server, such as one on a cluster. In the demo folder, copy the template and set the
+address, graph, graph space and login in the copy:
+
+```bash
+cp connection.properties.example connection.properties
+chmod 600 connection.properties      # it will hold passwords
+```
 
 ```properties
 HUGEGRAPH_URL=ccycloud-1.example.site:8080
@@ -130,12 +151,11 @@ HUGEGRAPH_USER=admin
 HUGEGRAPH_PASSWORD=<password>
 ```
 
-Two files hold settings. `connection.properties` is committed and lists every key with a safe default;
-`connection.properties.local` is git-ignored and holds this machine's hosts and passwords. A key set in the local
-file wins over the shared one, and an environment variable wins over both, so only the keys that differ need to go
-in the local file. Both use the same names as the environment variables, and can also hold the LLM settings
-(`LLM_PROVIDER`, `ANTHROPIC_BASE_URL`, `OLLAMA_HOST_IP`, ...). Keep real hosts, passwords and keys out of
-`connection.properties`; on a shared host, `chmod 600 connection.properties.local`.
+`connection.properties.example` is committed and lists every key with its default; the app never reads it.
+`connection.properties` is git-ignored and needs only the keys you change: keys left out use the defaults. It can
+also hold the LLM settings (`LLM_PROVIDER`, `ANTHROPIC_BASE_URL`, `OLLAMA_HOST_IP`, ...), with the same names as
+the environment variables. An exported environment variable wins over the file, so a stale `export` in your shell
+or `~/.bashrc` silently overrides it; check with `env | grep -E 'HUGEGRAPH|ANTHROPIC|CLAUDE|OLLAMA|LLM_'`.
 
 - **Graph space:** blank uses the server's default (`DEFAULT` on HugeGraph 1.7 and later). Set it when the graph
   lives in another graph space.
@@ -156,10 +176,25 @@ python graphrag_showcase.py    # http://127.0.0.1:8002  (use --host / --port to 
 ```
 
 **On a remote Linux host** (e.g. a cluster node close to HugeGraph), the app listens on that host's `127.0.0.1`.
-Reach it from your laptop through an SSH tunnel, then open `http://localhost:8002`:
-```bash
-ssh -L 8002:localhost:8002 user@rhel-host
-```
+
+1. Start it in `tmux` (`sudo dnf install -y tmux`), so it keeps running when your SSH session ends. Call the
+   virtual environment's Python by path: a new tmux shell may not have the venv activated, and a bare `python`
+   there can be another interpreter (`SyntaxError` on a type annotation, or `No module named 'gradio'`).
+   ```bash
+   tmux new -s graphrag -c /path/to/HUGEGRAPH-AI-EXAMPLES/KnowledgeGraphExtraction \
+     '../.venv/bin/python graphrag_showcase.py; exec bash'
+   ```
+   With a gateway token, export it inside the quoted command, e.g.
+   `'export ANTHROPIC_AUTH_TOKEN=$(cat ~/.config/anthropic_token); ../.venv/bin/python graphrag_showcase.py; exec bash'`.
+   Detach with Ctrl+B then D; `tmux attach -t graphrag` shows the app's log again.
+2. On your laptop, open an SSH tunnel and leave that terminal open. With `-N` it prints nothing while it works;
+   `ExitOnForwardFailure` makes it exit with an error instead if the local port is taken:
+   ```bash
+   ssh -N -o ExitOnForwardFailure=yes -L 127.0.0.1:8002:127.0.0.1:8002 user@rhel-host
+   ```
+3. Open `http://127.0.0.1:8002`. If it does not load, `curl -s -o /dev/null -w '%{http_code}\n'
+   http://127.0.0.1:8002` should print `200` on the host (app running) and then on your laptop (tunnel working).
+
 The UI has no login, so prefer the tunnel over `--host 0.0.0.0`. If you do bind to all interfaces, open the port
 with `sudo firewall-cmd --add-port=8002/tcp` and restrict who can reach it.
 
@@ -244,7 +279,7 @@ every 2 s and keeps the last 300 calls in memory only.
 
 Override defaults with `OLLAMA_CHAT_MODEL`, `OLLAMA_EXTRACT_MODEL`, `OLLAMA_TEXT2GQL_MODEL`, `OLLAMA_EMBEDDING_MODEL`, `OLLAMA_HOST_IP`, `OLLAMA_PORT`,
 `HUGEGRAPH_URL`, `HUGEGRAPH_GRAPH`, `HUGEGRAPH_GRAPHSPACE`, `HUGEGRAPH_USER`, `HUGEGRAPH_PASSWORD`,
-`HUGEGRAPH_BACKEND`, set as environment variables or in `connection.properties.local` (step 5), or use the in-app Settings
+`HUGEGRAPH_BACKEND`, set as environment variables or in `connection.properties` (step 5), or use the in-app Settings
 panel.
 
 Tests (`pip install pytest` once): `python -m pytest tests -q`
@@ -297,9 +332,12 @@ export ANTHROPIC_AUTH_TOKEN=$(security find-generic-password -a "$USER" -s "ANTH
 # Linux: read it from a file only you can read (chmod 600 ~/.config/anthropic_token)
 # export ANTHROPIC_AUTH_TOKEN=$(cat ~/.config/anthropic_token)
 export ANTHROPIC_BASE_URL="https://ai-gateway.example.com"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet"   # used as anthropic/claude-sonnet
+export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-6"   # used as anthropic/claude-sonnet-4-6
 python graphrag_showcase.py
 ```
+The model must be one your gateway key may use; otherwise every call fails with 403 `key_model_access_denied ...
+This key can only access models=[...]`, which names the allowed models. The same settings can go in
+`connection.properties` instead of being exported (the token is best kept out of the file).
 
 ### OpenAI
 ```bash

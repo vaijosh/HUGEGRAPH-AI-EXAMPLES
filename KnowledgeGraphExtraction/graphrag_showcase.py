@@ -160,10 +160,9 @@ HOSTED_EXTRACT_TOKENS = 16384
 
 # Settings can also live in connection.properties next to this file, as KEY=VALUE lines with the same names as the
 # environment variables (# or ! starts a comment), so a remote HugeGraph cluster needs nothing exported.
-# connection.properties is the shared, committed template; connection.properties.local (git-ignored) holds this
-# machine's values and passwords. An environment variable wins over both, and the local file over the shared one.
+# connection.properties is git-ignored and holds only this machine's values (copied from the committed
+# connection.properties.example); keys left out use the defaults below. An environment variable wins over the file.
 CONNECTION_PROPERTIES = Path(__file__).resolve().parent / "connection.properties"
-LOCAL_PROPERTIES = CONNECTION_PROPERTIES.with_name("connection.properties.local")
 
 
 def read_properties(path: Path) -> Dict[str, str]:
@@ -184,12 +183,15 @@ def read_properties(path: Path) -> Dict[str, str]:
 
 
 def setting(name: str, default: str = "") -> str:
-    """An environment variable, else connection.properties.local, else connection.properties, else the default."""
-    value = os.getenv(name)
-    if value is not None:
+    """An environment variable, else the value in connection.properties, else the default.
+
+    A blank environment variable counts as unset: hugegraph-llm copies every key of its .env into os.environ on
+    import, blank ones included (a freshly generated .env has OLLAMA_EMBEDDING_MODEL= empty).
+    """
+    value = os.getenv(name, "").strip()
+    if value:
         return value
-    props = {**read_properties(CONNECTION_PROPERTIES), **read_properties(LOCAL_PROPERTIES)}
-    return props.get(name, default)
+    return read_properties(CONNECTION_PROPERTIES).get(name, default)
 
 
 def provider_defaults(provider: str) -> Dict[str, str]:
