@@ -5,10 +5,12 @@ This project demonstrates a GraphRAG (Retrieval-Augmented Generation) applicatio
 It is designed to run against a locally cloned, editable version of the `hugegraph-ai` repository.
 
 ## Prerequisites
-* **macOS** (Apple Silicon/Intel)
-* **Homebrew** installed (`brew --version`)
-* **Docker** (for running the HugeGraph database server)
+* **macOS** (Apple Silicon/Intel) with **Homebrew** (`brew --version`), or **Linux: RHEL 9** (or Rocky/Alma 9, x86_64)
+  with `sudo` for `dnf`
+* **Docker** or **Podman**, only for running a local HugeGraph server (not needed when using an existing server)
 * **Ollama** (for the local LLM; installed in step 4)
+
+Where the commands differ, each step shows a macOS block and a Linux (RHEL 9) block.
 
 ---
 
@@ -21,24 +23,29 @@ Clone the official Apache HugeGraph AI repository anywhere you like, and point `
 export HUGEGRAPH_AI_HOME="$HOME/src/hugegraph-ai"
 git clone https://github.com/apache/incubator-hugegraph-ai.git "$HUGEGRAPH_AI_HOME"
 
-# Optional: keep it set in new terminals
+# Optional: keep it set in new terminals (~/.zshrc on macOS, ~/.bashrc on Linux)
 echo "export HUGEGRAPH_AI_HOME=\"$HUGEGRAPH_AI_HOME\"" >> ~/.zshrc
 ```
 
 ## 2. Set Up the Python Environment
-The `hugegraph-llm` module strictly requires Python 3.10 or 3.11. To avoid macOS `tcl-tk` compilation errors, we use Homebrew's pre-compiled Python 3.11.
+The `hugegraph-llm` module strictly requires Python 3.10 or 3.11.
 
+**macOS:** to avoid `tcl-tk` compilation errors, use Homebrew's pre-compiled Python 3.11.
 ```bash
-# Install Python 3.11 via Homebrew
 brew install python@3.11
-
-# Navigate to the repo (wherever you placed it); the virtual environment lives at its top level
-cd /path/to/HUGEGRAPH-AI-EXAMPLES
-
-# Create a virtual environment using the Homebrew Python 3.11 binary
+cd /path/to/HUGEGRAPH-AI-EXAMPLES          # the repo; the virtual environment lives at its top level
 $(brew --prefix python@3.11)/bin/python3.11 -m venv .venv
+```
 
-# Activate the virtual environment, then work from the demo folder
+**Linux (RHEL 9):** Python 3.11 is in the AppStream repository.
+```bash
+sudo dnf install -y python3.11 python3.11-pip python3.11-devel gcc git
+cd /path/to/HUGEGRAPH-AI-EXAMPLES          # the repo; the virtual environment lives at its top level
+python3.11 -m venv .venv
+```
+
+Then, on either platform, activate the virtual environment and work from the demo folder:
+```bash
 source .venv/bin/activate
 cd KnowledgeGraphExtraction
 ```
@@ -67,10 +74,23 @@ pip install -r requirements.txt
 ```
 
 ## 4. Install Ollama and Pull the Models
+**macOS:**
 ```bash
 brew install ollama
 brew services start ollama     # or run `ollama serve` in a separate terminal
+```
 
+**Linux (RHEL 9):** the install script sets Ollama up as a systemd service.
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+sudo systemctl enable --now ollama
+```
+Without a GPU, the chat and extraction models below are slow on CPU. On such hosts, use Claude or OpenAI for chat
+and extraction (see [Optional: Claude or OpenAI](#optional-claude-or-openai)) and pull only `nomic-embed-text`,
+which runs fine on CPU.
+
+Then pull the models:
+```bash
 #ollama pull qwen3-coder        # (Optional)chat / Text2Gremlin (30B MoE, ~18 GB; 8B models work but query poorly)
 #ollama pull qwen2.5:14b        # (Optional) extraction (~9 GB)
 ollama pull nomic-embed-text   # embeddings
@@ -78,7 +98,7 @@ ollama pull nomic-embed-text   # embeddings
 Verify Ollama is up: `curl http://127.0.0.1:11434/api/tags` should list all three models.
 
 ## 5. Run the HugeGraph Database
-Either run a local HugeGraph server via Docker on port `8080`:
+Either run a local HugeGraph server via Docker on port `8080` (on RHEL 9, `podman` takes the same arguments):
 ```bash
 docker run -itd --name=hugegraph -p 8080:8080 -p 8182:8182 hugegraph/hugegraph
 ```
@@ -115,6 +135,18 @@ With Ollama and HugeGraph running and the `.venv` activated, start the GraphRAG 
 ```bash
 python graphrag_showcase.py    # http://127.0.0.1:8002  (use --host / --port to change)
 ```
+
+**On a remote Linux host** (e.g. a cluster node close to HugeGraph), the app listens on that host's `127.0.0.1`.
+Reach it from your laptop through an SSH tunnel, then open `http://localhost:8002`:
+```bash
+ssh -L 8002:localhost:8002 user@rhel-host
+```
+The UI has no login, so prefer the tunnel over `--host 0.0.0.0`. If you do bind to all interfaces, open the port
+with `sudo firewall-cmd --add-port=8002/tcp` and restrict who can reach it.
+
+The host needs outbound access to PyPI and the Ollama installer while setting up, and to the LLM provider while
+running. LiteLLM's tokenizer (tiktoken) also downloads a file on first use; on hosts without internet access, copy
+a filled cache from another machine and point `TIKTOKEN_CACHE_DIR` at it.
 
 1. **Build tab** - upload a few sample documents, list the questions the graph should answer, infer and edit the
    schema, create it in HugeGraph, then ingest more documents of the same format.
@@ -241,8 +273,10 @@ python graphrag_showcase.py
 ### Claude (via an AI gateway)
 ```bash
 export LLM_PROVIDER=claude
-# Fetch the Auth Token securely from macOS Keychain
+# macOS: fetch the auth token from the Keychain
 export ANTHROPIC_AUTH_TOKEN=$(security find-generic-password -a "$USER" -s "ANTHROPIC_AUTH_TOKEN" -w)
+# Linux: read it from a file only you can read (chmod 600 ~/.config/anthropic_token)
+# export ANTHROPIC_AUTH_TOKEN=$(cat ~/.config/anthropic_token)
 export ANTHROPIC_BASE_URL="https://ai-gateway.example.com"
 export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet"   # used as anthropic/claude-sonnet
 python graphrag_showcase.py
