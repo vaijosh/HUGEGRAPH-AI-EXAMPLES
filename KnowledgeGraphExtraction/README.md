@@ -16,14 +16,21 @@ Where the commands differ, each step shows a macOS block and a Linux (RHEL 9) bl
 
 ## 1. Clone the HugeGraph Source Code
 Clone the official Apache HugeGraph AI repository anywhere you like, and point `HUGEGRAPH_AI_HOME` at the clone.
-`requirements.txt` uses this variable to find the local packages, so it must be set whenever you run `pip install`.
+`requirements.txt` uses this variable to find the local packages when you run `pip install` (step 3).
 
 ```bash
 # Any location works; this is just an example
 export HUGEGRAPH_AI_HOME="$HOME/src/hugegraph-ai"
 git clone https://github.com/apache/incubator-hugegraph-ai.git "$HUGEGRAPH_AI_HOME"
+```
 
-# Optional: keep it set in new terminals (~/.zshrc on macOS, ~/.bashrc on Linux)
+To keep it for later, either put it in `connection.properties.local` in the demo folder (your own, git-ignored
+settings file; see step 5) as an absolute path:
+```properties
+HUGEGRAPH_AI_HOME=/home/you/src/hugegraph-ai
+```
+or export it from your shell profile (`~/.zshrc` on macOS, `~/.bashrc` on Linux):
+```bash
 echo "export HUGEGRAPH_AI_HOME=\"$HUGEGRAPH_AI_HOME\"" >> ~/.zshrc
 ```
 
@@ -67,9 +74,11 @@ litellm>=1.0.0
 -e ${HUGEGRAPH_AI_HOME}/hugegraph-llm
 ```
 
-Install the requirements:
+Install the requirements. pip reads only environment variables, so when `HUGEGRAPH_AI_HOME` is not exported, the
+first line takes it from `connection.properties.local`:
 ```bash
-echo "$HUGEGRAPH_AI_HOME"        # must print your clone's path; if empty, re-run the export from step 1
+export HUGEGRAPH_AI_HOME="${HUGEGRAPH_AI_HOME:-$(awk -F= '$1 ~ /^[ \t]*HUGEGRAPH_AI_HOME[ \t]*$/ {sub(/^[^=]*=[ \t]*/, ""); sub(/[ \t]*$/, ""); print; exit}' connection.properties.local 2>/dev/null)}"
+echo "$HUGEGRAPH_AI_HOME"        # must print your clone's path; if empty, set it as in step 1
 pip install -r requirements.txt
 ```
 
@@ -103,8 +112,8 @@ Either run a local HugeGraph server via Docker on port `8080` (on RHEL 9, `podma
 docker run -itd --name=hugegraph -p 8080:8080 -p 8182:8182 hugegraph/hugegraph
 ```
 
-or use an existing HugeGraph server, such as one on a cluster. Copy `connection.properties.example` to
-`connection.properties` and set its address, graph, graph space and login:
+or use an existing HugeGraph server, such as one on a cluster. Create `connection.properties.local` in the demo
+folder and set the address, graph, graph space and login there:
 
 ```properties
 HUGEGRAPH_URL=ccycloud-1.example.site:8080
@@ -114,9 +123,12 @@ HUGEGRAPH_USER=admin
 HUGEGRAPH_PASSWORD=<password>
 ```
 
-The file uses the same names as the environment variables, and an environment variable wins over it, so either
-works. It can also hold the LLM settings (`LLM_PROVIDER`, `ANTHROPIC_BASE_URL`, `OLLAMA_HOST_IP`, ...). Keep it out
-of version control if it holds passwords or keys.
+Two files hold settings. `connection.properties` is committed and lists every key with a safe default;
+`connection.properties.local` is git-ignored and holds this machine's hosts and passwords. A key set in the local
+file wins over the shared one, and an environment variable wins over both, so only the keys that differ need to go
+in the local file. Both use the same names as the environment variables, and can also hold the LLM settings
+(`LLM_PROVIDER`, `ANTHROPIC_BASE_URL`, `OLLAMA_HOST_IP`, ...). Keep real hosts, passwords and keys out of
+`connection.properties`; on a shared host, `chmod 600 connection.properties.local`.
 
 - **Graph space:** blank uses the server's default (`DEFAULT` on HugeGraph 1.7 and later). Set it when the graph
   lives in another graph space.
@@ -225,7 +237,7 @@ every 2 s and keeps the last 300 calls in memory only.
 
 Override defaults with `OLLAMA_CHAT_MODEL`, `OLLAMA_EXTRACT_MODEL`, `OLLAMA_TEXT2GQL_MODEL`, `OLLAMA_EMBEDDING_MODEL`, `OLLAMA_HOST_IP`, `OLLAMA_PORT`,
 `HUGEGRAPH_URL`, `HUGEGRAPH_GRAPH`, `HUGEGRAPH_GRAPHSPACE`, `HUGEGRAPH_USER`, `HUGEGRAPH_PASSWORD`,
-`HUGEGRAPH_BACKEND`, set as environment variables or in `connection.properties` (step 5), or use the in-app Settings
+`HUGEGRAPH_BACKEND`, set as environment variables or in `connection.properties.local` (step 5), or use the in-app Settings
 panel.
 
 Tests (`pip install pytest` once): `python -m pytest tests -q`

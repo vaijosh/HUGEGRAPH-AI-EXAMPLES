@@ -4,8 +4,8 @@ __pycache__/
 *.pyc
 .pytest_cache/
 
-# Local settings and credentials (see connection.properties.example)
-connection.properties
+# Local settings and credentials (connection.properties is the shared template)
+connection.properties.local
 .claude/settings.local.json
 
 # IDE and OS

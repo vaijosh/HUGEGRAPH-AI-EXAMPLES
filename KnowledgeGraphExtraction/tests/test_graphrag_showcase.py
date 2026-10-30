@@ -58,8 +58,9 @@ ENSURE_GRAPH_EXISTS = app.ensure_graph_exists
 
 @pytest.fixture(autouse=True)
 def isolate_connection(monkeypatch, tmp_path):
-    """No test reads the real connection.properties or contacts a HugeGraph server to create a graph."""
+    """No test reads the real connection.properties(.local) or contacts a HugeGraph server to create a graph."""
     monkeypatch.setattr(app, "CONNECTION_PROPERTIES", tmp_path / "connection.properties")
+    monkeypatch.setattr(app, "LOCAL_PROPERTIES", tmp_path / "connection.properties.local")
     monkeypatch.setattr(app, "ensure_graph_exists", lambda: "")
     monkeypatch.setattr(app, "needs_text_filter_rewrite", lambda: False)
 
@@ -1936,6 +1937,24 @@ def test_settings_come_from_the_environment_then_connection_properties(monkeypat
     monkeypatch.setenv("HUGEGRAPH_URL", "10.0.0.9:8080")
     assert app.default_config()["graph_url"] == "10.0.0.9:8080"  # the environment wins
     assert app.read_properties(tmp_path / "missing.properties") == {}
+
+
+def test_connection_properties_local_wins_over_the_shared_file(monkeypatch, tmp_path):
+    shared = tmp_path / "connection.properties"
+    shared.write_text("HUGEGRAPH_URL=127.0.0.1:8080\nHUGEGRAPH_GRAPH=hugegraph\nHUGEGRAPH_PASSWORD=admin\n", encoding="utf-8")
+    local = tmp_path / "connection.properties.local"
+    local.write_text("HUGEGRAPH_URL=hg-node-1:8080\nHUGEGRAPH_PASSWORD=s3cret\n", encoding="utf-8")
+    monkeypatch.setattr(app, "CONNECTION_PROPERTIES", shared)
+    monkeypatch.setattr(app, "LOCAL_PROPERTIES", local)
+    for name in ("HUGEGRAPH_URL", "HUGEGRAPH_GRAPH", "HUGEGRAPH_PASSWORD"):
+        monkeypatch.delenv(name, raising=False)
+
+    cfg = app.default_config()
+    assert (cfg["graph_url"], cfg["graph_pwd"]) == ("hg-node-1:8080", "s3cret")  # from the local file
+    assert cfg["graph_name"] == "hugegraph"  # only in the shared file
+
+    monkeypatch.setenv("HUGEGRAPH_URL", "10.0.0.9:8080")
+    assert app.default_config()["graph_url"] == "10.0.0.9:8080"  # the environment wins over both
 
 
 def test_apply_config_sets_the_graph_space(monkeypatch):
